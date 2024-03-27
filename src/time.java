@@ -36,8 +36,7 @@ public class time
                 case 2:
                     if((year%4==0&&year%100!=0)||(year%400==0)){
                         totalDAY -= 29;
-                    }
-                    else{
+                    } else{
                         totalDAY -= 28;
                     }
                     month++;

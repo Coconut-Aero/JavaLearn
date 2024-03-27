@@ -2,7 +2,7 @@
 
 ------------------------------------------------------------------------
 
-Updated 2024-03-21 11:38 CST
+Updated 2024-03-27 11:14 CST
 
 包含：
 1. test.java（Hello World）       
@@ -11,3 +11,5 @@ Updated 2024-03-21 11:38 CST
 4. trianglearea.java（输入三个点的坐标，输出它们构成的三角形的面积（海伦公式））
 5. daysinmonth.java（某年某月所包含的天数）
 6. srpgame.java（剪刀石头布游戏）
+7. srpwin2（人胜利两次自动终止循环的变种）
+8. numberpyramid（数字金字塔，2的幂）
