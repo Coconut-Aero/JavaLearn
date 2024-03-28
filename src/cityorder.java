@@ -13,10 +13,9 @@ public class cityorder {
         String city3= input.next();
         System.out.println();
 
-        boolean allsame = false;
-        String Biggest = null;
-        String Smallest = null;
-        String Middle = null;
+        String Biggest;
+        String Smallest;
+        String Middle;
         int compare1 = city1.compareTo(city2);
         int compare2 = city2.compareTo(city3);
         int compare3 = city1.compareTo(city3);
