@@ -2,7 +2,7 @@
 
 ------------------------------------------------------------------------
 
-Updated 2024-03-30 19:00 CST
+_Updated 2024-04-03 12:00 CST_
 
 包含：
 1. test.java（Hello World）       
@@ -15,3 +15,5 @@ Updated 2024-03-30 19:00 CST
 8. numberpyramid.java（数字金字塔，2的幂）
 9. cityorder.java（把城市按字母顺序排序）
 10. estimatepi.java（计算圆周率）
+11. printcalendar2.java（输出以周一为一周第一天的日历）
+12. arraytest.java（输入一个数组，将其变换后输出）
