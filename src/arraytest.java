@@ -21,8 +21,8 @@ public class arraytest {
         }
         printArr(arr);
         for (int m = 0; m < 3; m++) {
-            int q =(int) Math.random() * 3;
-            int p =(int) Math.random() * 3 + 3;
+            int q =(int) (Math.random() * 3);
+            int p =(int) (Math.random() * 3 + 3);
             int r = arr[q];
             int s = arr[p];
             arr[q] = s;
@@ -30,7 +30,7 @@ public class arraytest {
         }
         printArr(arr);
     }
-    public static void printArr(int arr[]){
+    public static void printArr(int[] arr){
         for (int k = 0; k < 6; k++) {
             System.out.printf("%3d",arr[k]);
         }

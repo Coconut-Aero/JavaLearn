@@ -53,6 +53,6 @@ public class time
         long curreDAY = totalDAY + 1;
         long curreMON = totalMON % 12;
         long curreYER = year;
-        System.out.println("Current time is " + curreYER + " " + curreMON + " " + curreDAY + " " + curreHOU + ":" + curreMIN + ":" + curreSEC + " GMT");
+        System.out.println("Current time is " + curreYER + "-" + curreMON + "-" + curreDAY + " " + curreHOU + ":" + curreMIN + ":" + curreSEC + " GMT");
     }
 }
