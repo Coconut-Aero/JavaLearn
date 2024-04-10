@@ -2,7 +2,10 @@
 
 ------------------------------------------------------------------------
 
-_Updated 2024-04-03 12:00 CST_
+_Updated 2024-04-10 12:00 CST_
+
+关注[OrelaV](https://space.bilibili.com/3546375738361934)谢谢喵
+[![OrelaV](https://i2.hdslb.com/bfs/face/d812a48f1ca84d4f60a112dc31ba65546a787a76.jpg@240w_240h_1c_1s_!web-avatar-space-header.avif "@OrelaV")](https://space.bilibili.com/1790772607)
 
 包含：
 1. test.java（Hello World）       
@@ -17,3 +20,5 @@ _Updated 2024-04-03 12:00 CST_
 10. estimatepi.java（计算圆周率）
 11. printcalendar2.java（输出以周一为一周第一天的日历）
 12. arraytest.java（输入一个数组，将其变换后输出）
+13. enhancedRandom.java（增强的random，可以选择范围，排除一些不想要的数字）
+14. intSum.java（命令行参数计算多个数字的和）
