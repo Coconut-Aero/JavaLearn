@@ -30,3 +30,4 @@ A Java Repository for learning purpose of Coconut-Aero
 12. arraytest.java（输入一个数组，将其变换后输出）
 13. enhancedRandom.java（增强的random，可以选择范围，排除一些不想要的数字）
 14. intSum.java（命令行参数计算多个数字的和）
+15. hangman.java（猜单词的小游戏）
