@@ -10,8 +10,7 @@ public class enhancedRandom {
         }
     }
     public static int getRandom(int start, int end, int... numbers) {
-        boolean include = true;
-        int result = 0;
+        int result;
         result = (int) (Math.random() * (end - start) + start);
         for (int i = 0; i < numbers.length; i++) {
             if (result == numbers[i]) {
