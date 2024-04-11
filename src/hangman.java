@@ -4,8 +4,13 @@ public class hangman {
         Scanner input = new Scanner(System.in);
         boolean again = false;
         while (!again) {
-            String[] words = {"write", "program", "that", "analysis", "culture", "access"};
-            int choice = (int) (Math.random() * 6);
+            String[] words = {
+                    "write","program","that","analysis",
+                    "culture","access","enhance","system",
+                    "array","mirror","window","public",
+                    "chinese","physics","chemistry","static"
+            };
+            int choice = (int) (Math.random() * words.length);
             int miss = 0;
             String chosenword = words[choice];
             String[] chosenw = chosenword.split("");
