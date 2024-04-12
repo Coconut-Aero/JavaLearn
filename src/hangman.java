@@ -10,9 +10,8 @@ public class hangman {
                     "array","mirror","window","public",
                     "chinese","physics","chemistry","static"
             };
-            int choice = (int) (Math.random() * words.length);
             int miss = 0;
-            String chosenword = words[choice];
+            String chosenword = words[(int) (Math.random() * words.length)];
             String[] chosenw = chosenword.split("");
             boolean[] guess = new boolean[chosenword.length()];
             boolean exit = false;

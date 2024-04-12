@@ -6,7 +6,7 @@
 [![Static Badge](https://img.shields.io/badge/Coconut-Aero-blue)](https://github.com/Coconut-Aero)
 
 
-_Updated 2024-04-11 1:00 CST_
+_Updated 2024-04-13 3:00 CST_
 
 A Java Repository for learning purpose of Coconut-Aero
 
@@ -14,6 +14,8 @@ A Java Repository for learning purpose of Coconut-Aero
 [![OrelaV](https://i2.hdslb.com/bfs/face/d812a48f1ca84d4f60a112dc31ba65546a787a76.jpg@240w_240h_1c_1s_!web-avatar-space-header.avif "@OrelaV")](https://space.bilibili.com/3546375738361934)
 
 关注[OrelaV](https://space.bilibili.com/3546375738361934)谢谢喵
+
+BooleanWrapper.java 提供可以在方法内部修改并传递到方法外的boolean类型 BooleanWrapper
 
 包含：
 1. test.java（Hello World）       
@@ -31,3 +33,4 @@ A Java Repository for learning purpose of Coconut-Aero
 13. enhancedRandom.java（增强的random，可以选择范围，排除一些不想要的数字）
 14. intSum.java（命令行参数计算多个数字的和）
 15. hangman.java（猜单词的小游戏）
+16. quadSolve.java（解一元二次方程，方法可以调用 ）
