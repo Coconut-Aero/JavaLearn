@@ -28,4 +28,18 @@ public class shorted {
         }
         return true;
     }
+    public static int[] Short(int[] res){
+        if(!shorted.IsShorted(res)) {
+            for (int i = 0; i < res.length-1; i++) {
+                if (res[i] > res[i + 1]) {
+                    int tmp;
+                    tmp = res[i];
+                    res[i] = res[i + 1];
+                    res[i + 1] = tmp;
+                    i = 0;
+                }
+            }
+        }
+        return res;
+    }
 }

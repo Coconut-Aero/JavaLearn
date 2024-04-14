@@ -32,7 +32,7 @@ public class arraytest {
     }
     public static void printArr(int[] arr,int size){
         for (int k = 0; k < size; k++) {
-            System.out.printf("%3d",arr[k]);
+            System.out.printf("%5d",arr[k]);
         }
         System.out.println();
     }
