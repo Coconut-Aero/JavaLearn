@@ -6,7 +6,7 @@
 [![Static Badge](https://img.shields.io/badge/Coconut-Aero-blue)](https://github.com/Coconut-Aero)
 
 
-_Updated 2024-04-14 14:30 CST_
+_Updated 2024-04-15 23:50 CST_
 
 A Java Repository for learning purpose of Coconut-Aero
 
@@ -19,13 +19,16 @@ BooleanWrapper.java 提供可以在方法内部修改并传递到方法外的boo
 
 可以调用的方法：
 
-| 来源              |   类型    | 用法                                                                   |
-|-----------------|:-------:|----------------------------------------------------------------------|
-| arraytest.java  |  void   | printArr(int[] arr,int size)                                         |
-| quadSolve.java  |   int   | solveQuadratic(double[] eqn, BooleanWrapper haveRoot, double[] root) |
-| shorted.java    | boolean | IsShorted(int[] list)                                                |
-| mergeArray.java |  int[]  | merge(int[] list1,int[] list2)                                       |
-| shorted.java    |  int[]  | Short(int[] res)                                                     |
+| 来源               |   类型    | 用法                                                                   |
+|------------------|:-------:|----------------------------------------------------------------------|
+| arraytest.java   |  void   | printArr(int[] arr,int size)                                         |
+| quadSolve.java   |   int   | solveQuadratic(double[] eqn, BooleanWrapper haveRoot, double[] root) |
+| sorted.java      | boolean | IsSorted(int[] list)                                                 |
+| mergeArray.java  |  int[]  | merge(int[] list1,int[] list2)                                       |
+| sorted.java      |  int[]  | Sort(int[] res)                                                      |
+| eightQueens.java |  void   | eightQueenBool2DArrayPrint(boolean[][] arr)                          |
+| eightQueens.java |  void   | solveEightQueens(boolean[][] board, int row)                         |
+| eightQueens.java | boolean | eightQueenValid(boolean[][] arr,int row, int col)                    |
 
 
 包含：
@@ -48,15 +51,18 @@ BooleanWrapper.java 提供可以在方法内部修改并传递到方法外的boo
 | 14 | intSum.java         | 命令行参数计算多个数字的和                | 作业    |
 | 15 | hangman.java        | 猜单词的小游戏                      | 7.35  |
 | 16 | quadSolve.java      | 解一元二次方程，方法可以调用               | 7.25  |
-| 17 | shorted.java        | 检查数组是否按从小到大排序了               | 7.19  |
+| 17 | sorted.java         | 检查数组是否按从小到大排序了               | 7.19  |
 | 18 | lockerPuzzle.java   | 储物柜难题                        | 7.23  |
 | 19 | mergeArray.java     | 合并两个有序列表                     | 7.31  |
+| 20 | eightQueens.java    | 八皇后难题                        | 7.36  |
 
-| 序号 | 引用自                 | 引用到              | 引用方法/类型的名称     |
-|----|---------------------|------------------|----------------|
-| 1  | BooleanWrapper.java | quadSolve.java   | BooleanWrapper |
-| 2  | arraytest.java      | shorted.java     | printarr()     |
-| 3  | arraytest.java      | mergeArray.java  | printarr()     |
-| 4  | shorted.java        | mergeArray.java  | IsShorted()    |
-| 5  | shorted.java        | mergeArray.java  | Short()        |
+跨Class引用函数关系如下：
+
+| 序号 | 引用自                 | 引用到             | 引用方法/类型的名称     |
+|----|---------------------|-----------------|----------------|
+| 1  | BooleanWrapper.java | quadSolve.java  | BooleanWrapper |
+| 2  | arraytest.java      | sorted.java     | printarr()     |
+| 3  | arraytest.java      | mergeArray.java | printarr()     |
+| 4  | sorted.java         | mergeArray.java | IsSorted()     |
+| 5  | sorted.java         | mergeArray.java | Sort()         |
 

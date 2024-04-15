@@ -15,8 +15,8 @@ public class mergeArray {
         for (int i = 0; i < size2; i++) {
             list2[i] = input.nextInt();
         }
-        int[] shortedList1 = shorted.Short(list1);
-        int[] shortedList2 = shorted.Short(list2);
+        int[] shortedList1 = sorted.Sort(list1);
+        int[] shortedList2 = sorted.Sort(list2);
         System.out.print("list1 is ");
         arraytest.printArr(shortedList1,size1);
         System.out.print("list2 is ");
@@ -29,6 +29,6 @@ public class mergeArray {
         int[] res = new int[list1.length+list2.length];
         System.arraycopy(list1, 0, res, 0, list1.length);
         System.arraycopy(list2, 0, res, list1.length, list2.length);
-        return shorted.Short(res);
+        return sorted.Sort(res);
     }
 }
