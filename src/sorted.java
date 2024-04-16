@@ -15,9 +15,9 @@ public class sorted {
         System.out.print("The list have " + size +" integers:");
         arraytest.printArr(list,size);
         if (!IsShorted){
-            System.out.println("The list is not shorted.");
+            System.out.println("The list is not sorted.");
         }else {
-            System.out.println("The list is shorted.");
+            System.out.println("The list is sorted.");
         }
     }
     public static boolean IsSorted(int[] list){
