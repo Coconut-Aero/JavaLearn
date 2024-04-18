@@ -6,17 +6,14 @@ public class eightQueens {
 
     public static void solveEightQueens(boolean[][] board, int row) {
         if (row == 8) {
-            // 所有皇后都已经放置完毕，打印解决方案
             eightQueenBool2DArrayPrint(board);
             return;
         }
-
-        // 在当前行尝试放置皇后
         for (int col = 0; col < 8; col++) {
             if (eightQueenValid(board, row, col)) {
-                board[row][col] = true; // 放置皇后
-                solveEightQueens(board, row + 1); // 继续解决下一行
-                board[row][col] = false; // 回溯，尝试下一个位置
+                board[row][col] = true; 
+                solveEightQueens(board, row + 1); 
+                board[row][col] = false; 
             }
         }
     }
