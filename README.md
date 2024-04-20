@@ -6,7 +6,7 @@
 [![Static Badge](https://img.shields.io/badge/Coconut-Aero-blue)](https://github.com/Coconut-Aero)
 
 
-_Updated 2024-04-19 20:40 CST_
+_Updated 2024-04-20 23:40 CST_
 
 A Java Repository for learning purpose of Coconut-Aero
 
@@ -31,7 +31,7 @@ BooleanWrapper.java 提供可以在方法内部修改并传递到方法外的boo
 | eightQueens.java    | boolean | eightQueenValid(boolean[][] arr,int row, int col)                    |
 | enhancedRandom.java |   int   | getRandom(int start, int end, int... numbers)                        |
 | galtonBoard.java    | boolean | BooleanRandom()                                                      |
-| sumColumn.java      | double  | sumColumn(double[][] m, int columnIndex)                             |
+| sumColumnTest.java  | double  | sumColumn(double[][] m, int columnIndex)                             |
 
 
 包含：
@@ -61,7 +61,7 @@ BooleanWrapper.java 提供可以在方法内部修改并传递到方法外的boo
 | 21 | repeatedInArray.java   | 计算数字的出现次数                    | 7.3  |
 | 22 | galtonBoard.java       | 高尔顿瓶问题                       | 7.37 |
 | 23 | numberSingleDigit.java | 由100个个位数组成的数组中各个数字出现的次数统计    | 7.7  |
-| 24 | sumColumn.java         | 读取一个3×4的矩阵求每列数字的和            | 8.1  |
+| 24 | sumColumnTest.java     | 读取一个3×4的矩阵求每列数字的和            | 8.1  |
 
 跨Class引用函数关系如下：
 
