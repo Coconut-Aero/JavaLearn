@@ -69,15 +69,15 @@ BooleanWrapper.java 提供可以在方法内部修改并传递到方法外的boo
 
 跨Class引用函数关系如下：
 
-| 序号 | 引用自                 | 引用到                    | 引用方法/类型的名称     |
-|----|---------------------|------------------------|----------------|
-| 1  | BooleanWrapper.java | quadSolve.java         | BooleanWrapper |
-| 2  | arraytest.java      | sorted.java            | printarr()     |
-| 3  | arraytest.java      | mergeArray.java        | printarr()     |
-| 4  | sorted.java         | mergeArray.java        | IsSorted()     |
-| 5  | sorted.java         | mergeArray.java        | Sort()         |
-| 6  | sorted.java         | repeatedInArray.java   | Sort()         |
-| 7  | enhancedRandom.java | galtonBoard.java       | getRandom()    |
-| 8  | enhancedRandom.java | numberSingleDigit.java | getRandom()    |
-| 9  | galtonBoard.java    | maxRowCol.java         | BooleanRandom  |
+| 序号 | 引用自                 | 引用到                    | 引用方法/类型的名称      |
+|----|---------------------|------------------------|-----------------|
+| 1  | BooleanWrapper.java | quadSolve.java         | BooleanWrapper  |
+| 2  | arraytest.java      | sorted.java            | printarr()      |
+| 3  | arraytest.java      | mergeArray.java        | printarr()      |
+| 4  | sorted.java         | mergeArray.java        | IsSorted()      |
+| 5  | sorted.java         | mergeArray.java        | Sort()          |
+| 6  | sorted.java         | repeatedInArray.java   | Sort()          |
+| 7  | enhancedRandom.java | galtonBoard.java       | getRandom()     |
+| 8  | enhancedRandom.java | numberSingleDigit.java | getRandom()     |
+| 9  | galtonBoard.java    | maxRowCol.java         | BooleanRandom() |
 
