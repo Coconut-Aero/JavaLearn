@@ -19,21 +19,22 @@ BooleanWrapper.java 提供可以在方法内部修改并传递到方法外的boo
 
 可以调用的方法：
 
-| 来源                  |     类型     | 用法                                                                   |
-|---------------------|:----------:|----------------------------------------------------------------------|
-| arraytest.java      |    void    | printArr(int[] arr,int size)                                         |
-| quadSolve.java      |    int     | solveQuadratic(double[] eqn, BooleanWrapper haveRoot, double[] root) |
-| sorted.java         |  boolean   | IsSorted(int[] list)                                                 |
-| mergeArray.java     |   int[]    | merge(int[] list1,int[] list2)                                       |
-| sorted.java         |   int[]    | Sort(int[] res)                                                      |
-| eightQueens.java    |    void    | eightQueenBool2DArrayPrint(boolean[][] arr)                          |
-| eightQueens.java    |    void    | solveEightQueens(boolean[][] board, int row)                         |
-| eightQueens.java    |  boolean   | eightQueenValid(boolean[][] arr,int row, int col)                    |
-| enhancedRandom.java |    int     | getRandom(int start, int end, int... numbers)                        |
-| galtonBoard.java    |  boolean   | BooleanRandom()                                                      |
-| sumColumnTest.java  |   double   | sumColumn(double[][] m, int columnIndex)                             |
-| addMatrixTest.java  | double[][] | addMatrix(double[][] matrix1, double[][] matrix2)                    |
-| maxRowCol.java      |    int     | findMax(int[] matrix)                                                |
+| 来源                        |     类型     | 用法                                                                   |
+|---------------------------|:----------:|----------------------------------------------------------------------|
+| arraytest.java            |    void    | printArr(int[] arr,int size)                                         |
+| quadSolve.java            |    int     | solveQuadratic(double[] eqn, BooleanWrapper haveRoot, double[] root) |
+| sorted.java               |  boolean   | IsSorted(int[] list)                                                 |
+| mergeArray.java           |   int[]    | merge(int[] list1,int[] list2)                                       |
+| sorted.java               |   int[]    | Sort(int[] res)                                                      |
+| eightQueens.java          |    void    | eightQueenBool2DArrayPrint(boolean[][] arr)                          |
+| eightQueens.java          |    void    | solveEightQueens(boolean[][] board, int row)                         |
+| eightQueens.java          |  boolean   | eightQueenValid(boolean[][] arr,int row, int col)                    |
+| enhancedRandom.java       |    int     | getRandom(int start, int end, int... numbers)                        |
+| galtonBoard.java          |  boolean   | BooleanRandom()                                                      |
+| sumColumnTest.java        |   double   | sumColumn(double[][] m, int columnIndex)                             |
+| addMatrixTest.java        | double[][] | addMatrix(double[][] matrix1, double[][] matrix2)                    |
+| maxRowCol.java            |    int     | findMax(int[] matrix)                                                |
+| multiplyMatrixTest.java   | double[][] | multiplyMatrix(double[][] matrix1, double[][] matrix2)               |
 
 包含：
 
