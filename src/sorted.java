@@ -13,7 +13,7 @@ public class sorted {
         }
         boolean IsShorted = IsSorted(list);
         System.out.print("The list have " + size +" integers:");
-        arraytest.printArr(list,size);
+        arrayTest.printArr(list,size);
         if (!IsShorted){
             System.out.println("The list is not sorted.");
         }else {

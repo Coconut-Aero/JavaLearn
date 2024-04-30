@@ -1,5 +1,5 @@
 import java.util.*;
-public class arraytest {
+public class arrayTest {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int[] arr = new int[6];

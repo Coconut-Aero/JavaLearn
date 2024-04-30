@@ -1,9 +1,9 @@
 import java.util.*;
-public class trianglearea {
+public class triangleArea {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         // Create Scanner;
-        System.out.println("Enter thecoordinates of three points separated by spaces");
+        System.out.println("Enter the coordinates of three points separated by spaces");
         System.out.println("like x1 y1 x2 y2 x3 y3");
         System.out.print("x1:");
         double x1 = input.nextDouble();
@@ -42,10 +42,10 @@ public class trianglearea {
 
         double add = line1 + line2 + line3;
         double s = add / 2;
-        double sline1 = s - line1;
-        double sline2 = s - line2;
-        double sline3 = s - line3;
-        double total = s * sline1 * sline2 * sline3;
+        double sLine1 = s - line1;
+        double sLine2 = s - line2;
+        double sLine3 = s - line3;
+        double total = s * sLine1 * sLine2 * sLine3;
         double area = Math.sqrt(total);
         //Finally get the final result.
 

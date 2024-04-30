@@ -1,5 +1,4 @@
-import java.util.*;
-public class numberpyramid {
+public class numberPyramid {
     public static void main(String[] args) {
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < (20-i+1) ; j++) {

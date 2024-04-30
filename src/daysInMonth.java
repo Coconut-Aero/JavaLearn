@@ -1,5 +1,5 @@
 import java.util.*;
-public class daysinmonth {
+public class daysInMonth {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         //Create a scanner

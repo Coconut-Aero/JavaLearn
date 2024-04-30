@@ -1,4 +1,4 @@
-public class estimatepi {
+public class estimatePI {
     public static double pi(int i) {
         double result = 0;
         for (int j = 1; j < i; j++) {
