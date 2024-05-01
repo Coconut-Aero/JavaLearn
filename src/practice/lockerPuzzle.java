@@ -1,3 +1,5 @@
+package practice;
+
 public class lockerPuzzle {
     public static void main(String[] args) {
         boolean[] lock = new boolean[100];

@@ -1,3 +1,7 @@
+package practice;
+
+import homework.enhancedRandom;
+
 import java.util.Scanner;
 
 public class galtonBoard {

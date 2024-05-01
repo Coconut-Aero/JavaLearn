@@ -1,3 +1,7 @@
+package homework;
+
+import practice.galtonBoard;
+
 public class maxRowCol {
     public static void main(String[] args) {
         boolean[][] matrix1 = new boolean[4][4];

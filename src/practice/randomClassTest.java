@@ -1,3 +1,5 @@
+package practice;
+
 import java.security.SecureRandom;
 
 public class randomClassTest {

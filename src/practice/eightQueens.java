@@ -1,3 +1,5 @@
+package practice;
+
 public class eightQueens {
     public static void main(String[] args) {
         boolean[][] board = new boolean[8][8];

@@ -1,3 +1,7 @@
+package practice;
+
+import homework.enhancedRandom;
+
 public class numberSingleDigit {
     public static void main(String[] args) {
         int[] tmp = new int[100];

@@ -1,3 +1,5 @@
+package practice;
+
 public class estimatePI {
     public static double pi(int i) {
         double result = 0;

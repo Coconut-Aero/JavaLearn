@@ -1,3 +1,5 @@
+package homework;
+
 import java.util.*;
 public class sumDigit {
     public static void main(String[] args) {

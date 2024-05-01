@@ -1,4 +1,6 @@
-class BooleanWrapper {
+package practice;
+
+public class BooleanWrapper {
     private boolean value;
 
     public BooleanWrapper(boolean value) {

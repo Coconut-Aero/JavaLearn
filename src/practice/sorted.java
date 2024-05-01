@@ -1,3 +1,7 @@
+package practice;
+
+import homework.arrayTest;
+
 import java.util.Scanner;
 
 public class sorted {
@@ -15,9 +19,9 @@ public class sorted {
         System.out.print("The list have " + size +" integers:");
         arrayTest.printArr(list,size);
         if (!IsShorted){
-            System.out.println("The list is not sorted.");
+            System.out.println("The list is not practice.sorted.");
         }else {
-            System.out.println("The list is sorted.");
+            System.out.println("The list is practice.sorted.");
         }
     }
     public static boolean IsSorted(int[] list){

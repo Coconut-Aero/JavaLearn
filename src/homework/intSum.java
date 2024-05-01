@@ -1,4 +1,5 @@
-import java.util.*;
+package homework;
+
 public class intSum {
     public static void main(String[] args) {
         int Sum = 0;

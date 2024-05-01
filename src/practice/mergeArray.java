@@ -1,3 +1,7 @@
+package practice;
+
+import homework.arrayTest;
+
 import java.util.Scanner;
 
 public class mergeArray {
