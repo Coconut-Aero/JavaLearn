@@ -16,7 +16,7 @@ public class enhancedRandom {
         for (int i = 0; i < numbers.length; i++) {
             if (result == numbers[i]) {
                 result = (int) (Math.random() * (end - start) + start);
-                i=0;
+                i=-1;
             }
         }
         return result;
