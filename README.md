@@ -7,7 +7,7 @@
 
 [![Banner](https://s21.ax1x.com/2024/05/01/pkkuwQg.png)](https://imgse.com/i/pkkuwQg)
 
-_Updated 2024-05-03 10:40 CST_
+_Updated 2024-05-08 13:00 CST_
 
 A Java Repository for learning purpose of Coconut-Aero
 
@@ -88,6 +88,8 @@ practice/BooleanWrapper.java 提供可以在方法内部修改并传递到方法
 | 32 | draft/multiplyCalc.java          | 乘法计算                         | 来自 NOI OpenJudge 1.3/19 |
 | 33 | draft/powerOf2.java              | 2的乘方                         | 来自 NOI OpenJudge 1.3/20 |
 | 34 | practice/circleNumberReport.java | 约瑟夫问题                        | 来自Sakozyfan             |
+| 35 | homework/BMITest.java            | BMI类                         | 作业                      |
+| 36 | homework/bigIntegerTest.java     | 计算出大于Long.MAX_VALUE的前十个平方数   | 作业                      |
 
 跨Class引用函数关系如下：
 
