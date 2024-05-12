@@ -90,6 +90,7 @@ practice/BooleanWrapper.java 提供可以在方法内部修改并传递到方法
 | 34 | practice/circleNumberReport.java | 约瑟夫问题                        | 来自Sakozyfan             |
 | 35 | homework/BMITest.java            | BMI类                         | 作业                      |
 | 36 | homework/bigIntegerTest.java     | 计算出大于Long.MAX_VALUE的前十个平方数   | 作业                      |
+| 37 | practice/ATMTest.java            | ATM类                         | 10.7                    |
 
 跨Class引用函数关系如下：
 
