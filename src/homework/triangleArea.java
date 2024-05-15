@@ -42,13 +42,7 @@ public class triangleArea {
         double line3 = Math.sqrt(line3x2 + line3y2);
         //Calculate the square root of them, and you get the length of line.
 
-        double add = line1 + line2 + line3;
-        double s = add / 2;
-        double sLine1 = s - line1;
-        double sLine2 = s - line2;
-        double sLine3 = s - line3;
-        double total = s * sLine1 * sLine2 * sLine3;
-        double area = Math.sqrt(total);
+        double area = Triangle.getArea(line1, line2, line3);
         //Finally get the final result.
 
         System.out.println("The area of the triangle is " + area);
