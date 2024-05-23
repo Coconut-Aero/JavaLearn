@@ -7,7 +7,7 @@
 
 [![Banner](https://s21.ax1x.com/2024/05/01/pkkuwQg.png)](https://imgse.com/i/pkkuwQg)
 
-_Updated 2024-05-23 12:00 CST_
+_Updated 2024-05-24 2:00 CST_
 
 A Java Repository for learning purpose of Coconut-Aero
 
@@ -51,16 +51,18 @@ practice/BooleanWrapper.java 提供可以在方法内部修改并传递到方法
 
 
 
-| 序号 |               文件名                | 类名                                                                   |
-|----|:--------------------------------:|----------------------------------------------------------------------|
-| 1  |   homework/rectangleTest.java    | rectangleTest ，Rectangle                                             |
-| 2  |    practice/buckshotTest.java    | buckshotTest，buckshot                                                |
-| 3  | practice/circleNumberReport.java | circleNumberReport，Constants                                         |
-| 4  |      homework/BMITest.java       | BMITest，BMI                                                          |
-| 5  |      practice/ATMTest.java       | ATMTest，ATM                                                          |
-| 6  |   homework/TriangleClass.java    | GeometricObject，Triangle（extends）                                    |
-| 7  |    homework/AccountTest.java     | AccountTest，Account，CheckingAccount（extends），SavingsAccount（extends） |
-| 8  |    practice/PrimeNumber.java     | PrimeNumber，StackOfIntegers                                          |
+| 序号 |               文件名                | 类名                                                                                   |
+|----|:--------------------------------:|--------------------------------------------------------------------------------------|
+| 1  |   homework/rectangleTest.java    | rectangleTest ，Rectangle                                                             |
+| 2  |    practice/buckshotTest.java    | buckshotTest，buckshot                                                                |
+| 3  | practice/circleNumberReport.java | circleNumberReport，Constants                                                         |
+| 4  |      homework/BMITest.java       | BMITest，BMI                                                                          |
+| 5  |      practice/ATMTest.java       | ATMTest，ATM                                                                          |
+| 6  |   homework/TriangleClass.java    | GeometricObject，Triangle（extends）                                                    |
+| 7  |    homework/AccountTest.java     | AccountTest，Account，CheckingAccount（extends），SavingsAccount（extends）                 |
+| 8  |    practice/PrimeNumber.java     | PrimeNumber，StackOfIntegers                                                          |
+| 9  |     homework/PersonTest.java     | PersonTest，Person，Employee（extends），Faculty（extends），Staff（extends），Student（extends） |
+| 10 |      homework/DateTest.java      | DateTest，Date                                                                        |
 
 
 
@@ -111,6 +113,8 @@ practice/BooleanWrapper.java 提供可以在方法内部修改并传递到方法
 | 39 | homework/TriangleClass.java      | Triangle类，继承自GeometricObject | 作业                      |
 | 40 | homework/AccountTest.java        | Account类                     | 作业                      |
 | 41 | practice/PrimeNumber.java        | 输出小于100的所有质数                 | 10.6                    |
+| 42 | homework/PersonTest.java         | Person类及其子类                  | 作业                      |
+| 43 | homework/DateTest.java           | Date类                        | 42的依赖项目，源于10.14         |
 
 
 跨Class引用函数关系如下：
