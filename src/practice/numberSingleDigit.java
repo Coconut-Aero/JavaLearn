@@ -7,7 +7,7 @@ public class numberSingleDigit {
         int[] tmp = new int[100];
         int[] count = new int[10];
         for (int i = 0; i < 100; i++) {
-            tmp[i] = enhancedRandom.getRandom(-1,10,-1,10);
+            tmp[i] = enhancedRandom.getRandomExcept(-1,10,-1,10);
         }
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {

@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class galtonBoard {
     public static boolean BooleanRandom(){
-        int ran = enhancedRandom.getRandom(-1,2,-1,2);
+        int ran = enhancedRandom.getRandomExcept(-1,2,-1,2);
         return ran != 0;
     }
     public static void main(String[] args) {

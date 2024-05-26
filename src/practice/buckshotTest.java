@@ -180,7 +180,7 @@ public class buckshotTest {
 }
 class buckshot {
     public static boolean[] shell() {
-        int n = enhancedRandom.getRandom(0, 9, 0, 1, 9);
+        int n = enhancedRandom.getRandomExcept(0, 9, 0, 1, 9);
         boolean[] shellType = new boolean[n];
         for (int i = 0; i < n; i++) {
             shellType[i] = galtonBoard.BooleanRandom();
@@ -193,14 +193,14 @@ class buckshot {
             prop[i] = 0;
         }
         for (int i = 0; i < 4; i++) {
-            prop[i]=enhancedRandom.getRandom(0,9,0);
+            prop[i]=enhancedRandom.getRandomExcept(0,9,0);
         }
         return prop;
     }
     public static void addProp(int[] prop) {
         for (int i = 0; i < prop.length; i++) {
             if (prop[i] == 0) {
-                prop[i] = enhancedRandom.getRandom(0, 8, 0);
+                prop[i] = enhancedRandom.getRandomExcept(0, 8, 0);
             }
         }
     }
@@ -243,7 +243,7 @@ class buckshot {
         }
     }
     public static void SpecialPhone(boolean[] shell){
-        int i = enhancedRandom.getRandom(0, shell.length, 0,9);
+        int i = enhancedRandom.getRandomExcept(0, shell.length, 0,9);
         if (shell[i]){
             System.out.println("Shell " + i + " is a real shell.");
         }

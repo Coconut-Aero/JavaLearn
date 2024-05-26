@@ -7,7 +7,7 @@ import static practice.Constants.N;
 public class circleNumberReport {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int m, k, position = enhancedRandom.getRandom(0, N,100), tmp=0;
+        int m, k, position = enhancedRandom.getRandomExcept(0, N,100), tmp=0;
         boolean[] exit = new boolean[N];
         System.out.print("Enter m and k ");
         m = sc.nextInt();
