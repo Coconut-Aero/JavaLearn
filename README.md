@@ -120,8 +120,8 @@ practice/BooleanWrapper.java 提供可以在方法内部修改并传递到方法
 | 45 | homework/NewAccount.java         | 新的Account类，包括一个Transaction使用ArrayList存储转账记录 | 作业                      |
 | 46 | homework/ReplaceTextTest.java    | 替换文件中的某些字符（串）                               | 作业                      |
 | 47 | homework/NewPrintCalendar.java   | 增强版的PrintCalendar                           | 作业                      |
-| 48 | homework/FileStatistics.java     |
-| 49 | homework/ComparableCircle.java   |
+| 48 | homework/FileStatistics.java     | 文件信息统计，包括文本文件的行数，字符数，单词数                    | 作业                      |
+| 49 | homework/ComparableCircle.java   | compareTo方法的重写                              | 作业                      |
 
 
 跨Class引用函数关系如下：
