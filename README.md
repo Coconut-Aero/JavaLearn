@@ -7,7 +7,7 @@
 
 [![Banner](https://s21.ax1x.com/2024/05/01/pkkuwQg.png)](https://imgse.com/i/pkkuwQg)
 
-_Updated 2024-06-13 2:00 CST_
+_Updated 2024-06-13 16:00 CST_
 
 A Java Repository for learning purpose of Coconut-Aero
 
@@ -103,7 +103,7 @@ practice/BooleanWrapper.java 提供可以在方法内部修改并传递到方法
 | 28 | homework/rectangleTest.java      | Rectangle类                                  | 作业                      |
 | 29 | practice/randomClassTest.java    | 使用Random类                                   | 作业                      |
 | 30 | practice/buckshotTest.java       | 俄罗斯轮盘赌游戏（目前处于测试阶段）                          | 灵感源自游戏Buckshot Roulette |
-| 31 | draft/averageCalc.java           | 平均数计算                                       | 卡拉彼丘场均计算（bushi）         |
+| 31 | draft/averageCalc.java           | 平均数计算                                       |                         |
 | 32 | draft/multiplyCalc.java          | 乘法计算                                        | 来自 NOI OpenJudge 1.3/19 |
 | 33 | draft/powerOf2.java              | 2的乘方                                        | 来自 NOI OpenJudge 1.3/20 |
 | 34 | practice/circleNumberReport.java | 约瑟夫问题                                       | 来自Sakozyfan             |
@@ -120,6 +120,8 @@ practice/BooleanWrapper.java 提供可以在方法内部修改并传递到方法
 | 45 | homework/NewAccount.java         | 新的Account类，包括一个Transaction使用ArrayList存储转账记录 | 作业                      |
 | 46 | homework/ReplaceTextTest.java    | 替换文件中的某些字符（串）                               | 作业                      |
 | 47 | homework/NewPrintCalendar.java   | 增强版的PrintCalendar                           | 作业                      |
+| 48 | homework/FileStatistics.java     |
+| 49 | homework/ComparableCircle.java   |
 
 
 跨Class引用函数关系如下：
