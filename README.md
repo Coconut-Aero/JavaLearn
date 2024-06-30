@@ -13,17 +13,12 @@ A Java Repository for learning purpose of Coconut-Aero
 
 A part of  **Project / FrontStar**
 
-
-[![OrelaV](https://i2.hdslb.com/bfs/face/d812a48f1ca84d4f60a112dc31ba65546a787a76.jpg@240w_240h_1c_1s_!web-avatar-space-header.avif "@OrelaV")](https://space.bilibili.com/3546375738361934)
-
-关注[OrelaV](https://space.bilibili.com/3546375738361934)谢谢喵
-
 ## 特别注意
 您可以自由地使用本仓库，除非您违反 GNU Public License v3.0 协议中的相关内容。
 您可以修改本仓库中的代码，但您保证修改后的代码按照与本仓库类似的方式进行开源。
 
 ## 特别声明 
-我们不允许任何人将此仓库内容上传到诸如Gitee等存在闭源人工审核等机制的仓库内。
+我们反对将此仓库内容上传到诸如Gitee、GitCode等由中华人民共和国控制的存在闭源人工审核等机制的仓库内。
 
 ## 相关信息
 
