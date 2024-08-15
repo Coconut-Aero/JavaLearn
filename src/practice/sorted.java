@@ -17,7 +17,7 @@ public class sorted {
         }
         boolean IsShorted = IsSorted(list);
         System.out.print("The list have " + size +" integers:");
-        arrayTest.printArr(list,size);
+        arrayTest.printIntArray(list,size);
         if (!IsShorted){
             System.out.println("The list is not practice.sorted.");
         }else {

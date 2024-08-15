@@ -22,12 +22,12 @@ public class mergeArray {
         int[] shortedList1 = sorted.Sort(list1);
         int[] shortedList2 = sorted.Sort(list2);
         System.out.print("list1 is ");
-        arrayTest.printArr(shortedList1,size1);
+        arrayTest.printIntArray(shortedList1,size1);
         System.out.print("list2 is ");
-        arrayTest.printArr(shortedList2,size2);
+        arrayTest.printIntArray(shortedList2,size2);
         int[] merged = merge(shortedList1,shortedList2);
         System.out.print("The merged list is ");
-        arrayTest.printArr(merged,size1+size2);
+        arrayTest.printIntArray(merged,size1+size2);
     }
     public static int[] merge(int[] list1,int[] list2){
         int[] res = new int[list1.length+list2.length];

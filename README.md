@@ -7,7 +7,7 @@
 
 [![Banner](https://s21.ax1x.com/2024/05/01/pkkuwQg.png)](https://imgse.com/i/pkkuwQg)
 
-_Updated 2024-06-13 16:00 CST_
+_Updated 2024-08-15 12:00 CST_
 
 A Java Repository for learning purpose of Coconut-Aero
 
@@ -21,7 +21,6 @@ A part of  **Project / FrontStar**
 我们反对将此仓库内容上传到诸如Gitee、GitCode等由中华人民共和国控制的存在闭源人工审核等机制的仓库内。
 
 ## 相关信息
-
 practice/BooleanWrapper.java 提供可以在方法内部修改并传递到方法外的boolean类型 BooleanWrapper
 
 可以调用的方法：
@@ -59,8 +58,6 @@ practice/BooleanWrapper.java 提供可以在方法内部修改并传递到方法
 | 8  |    practice/PrimeNumber.java     | PrimeNumber，StackOfIntegers                                                          |
 | 9  |     homework/PersonTest.java     | PersonTest，Person，Employee（extends），Faculty（extends），Staff（extends），Student（extends） |
 | 10 |      homework/DateTest.java      | DateTest，Date                                                                        |
-
-
 
 
 
@@ -117,6 +114,8 @@ practice/BooleanWrapper.java 提供可以在方法内部修改并传递到方法
 | 47 | homework/NewPrintCalendar.java   | 增强版的PrintCalendar                           | 作业                      |
 | 48 | homework/FileStatistics.java     | 文件信息统计，包括文本文件的行数，字符数，单词数                    | 作业                      |
 | 49 | homework/ComparableCircle.java   | compareTo方法的重写                              | 作业                      |
+| 50 | practice/HOI4FastCore.java       | 输出一个文件，可用于HOI4获取所有地区的核心（测试阶段）               |
+| 51 | practice/RandomPassword.java     | 输出复杂度足够高的随机密码                               |
 
 
 跨Class引用函数关系如下：
