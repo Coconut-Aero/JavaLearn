@@ -6,13 +6,16 @@ import java.io.PrintWriter;
 
 public class HOI4FastCore {
     public static void main(String[] args) throws IOException {
-        File targetFile = new File("E:\\SteamLibrary\\steamapps\\common\\Hearts of Iron IV\\all_core.txt");
+        File targetFile = new File("E:/all_core.txt");
 
         System.out.println("Target file directory is : "+targetFile.getAbsolutePath());
 
         if (!targetFile.exists()) {
-            System.out.println("Target file is not exist" );
-            System.exit(1);
+            System.out.println("History file does not exist. Creating a new file.");
+            boolean newFile = targetFile.createNewFile();
+            if (!newFile) {
+                System.out.println("History file could not be created. Working directory may not have the permission.");
+            }
         }
 
         if (!targetFile.canWrite()) {
