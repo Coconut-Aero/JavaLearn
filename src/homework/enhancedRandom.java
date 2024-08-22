@@ -1,5 +1,7 @@
 package homework;
 
+import java.security.SecureRandom;
+
 public class enhancedRandom {
     public static void main(String[] args) {
         for (int i = 0; i < 3; i++) {
@@ -11,6 +13,9 @@ public class enhancedRandom {
         }
     }
     public static int getRandomExcept(int start, int end, int... numbers) {
+        if (start >= end) {
+            throw new IllegalArgumentException("End must be greater than start");
+        }
         int res;
         res = (int) (Math.random() * (end - start) + start);
         for (int i = 0; i < numbers.length; i++) {
@@ -22,6 +27,17 @@ public class enhancedRandom {
         return res;
     }
     public static int getRandom(int start, int end) {
+        if (start >= end) {
+            throw new IllegalArgumentException("End must be greater than start");
+        }
         return (int) (Math.random() * (end - start) + start);
     }
+    public static int getSecureRandom(int start, int end) {
+        if (start >= end) {
+            throw new IllegalArgumentException("End must be greater than start");
+        }
+        SecureRandom secureRandom = new SecureRandom();
+        return secureRandom.nextInt(end - start) + start;
+    }
+
 }

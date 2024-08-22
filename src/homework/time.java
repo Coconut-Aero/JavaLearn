@@ -4,7 +4,10 @@ public class time
 {
     public static void main(String[] args)
     {
-        long totalMiS = System.currentTimeMillis();
+        System.out.println(TimeStampToTime(System.currentTimeMillis()));
+    }
+    public static String TimeStampToTime (long time) {
+        long totalMiS = time;
         long totalSEC = totalMiS / 1000;
         long totalMIN = totalSEC / 60;
         long totalHOU = totalMIN / 60;
@@ -12,7 +15,6 @@ public class time
         long curreSEC = totalSEC % 60;
         long curreMIN = totalMIN % 60;
         long curreHOU = totalHOU % 24;
-
         long dayinmonth = 31;
         int month = 1;
         int year=1970;
@@ -50,11 +52,9 @@ public class time
             }
         }
         long totalMON = month;
-
-
         long curreDAY = totalDAY + 1;
         long curreMON = totalMON % 12;
         long curreYER = year;
-        System.out.println("Current homework.time is " + curreYER + "-" + curreMON + "-" + curreDAY + " " + curreHOU + ":" + curreMIN + ":" + curreSEC + " GMT");
+        return  curreYER + "-" + curreMON + "-" + curreDAY + " " + curreHOU + ":" + curreMIN + ":" + curreSEC + " GMT";
     }
 }

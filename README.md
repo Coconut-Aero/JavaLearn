@@ -7,7 +7,7 @@
 
 [![Banner](https://s21.ax1x.com/2024/05/01/pkkuwQg.png)](https://imgse.com/i/pkkuwQg)
 
-_Updated 2024-08-22 09:00 CST_
+_Updated 2024-08-22 23:45 CST_
 
 A Java Repository for learning purpose of Coconut-Aero
 
@@ -98,7 +98,7 @@ practice/BooleanWrapper.java 提供可以在方法内部修改并传递到方法
 | 31 | draft/averageCalc.java                  | 平均数计算                                       |                         |
 | 32 | draft/multiplyCalc.java                 | 乘法计算                                        | 来自 NOI OpenJudge 1.3/19 |
 | 33 | draft/powerOf2.java                     | 2的乘方                                        | 来自 NOI OpenJudge 1.3/20 |
-| 34 | practice/circleNumberReport.java        | 约瑟夫问题                                       | 来自Sakozyfan             |
+| 34 | practice/circleNumberReport.java        | 约瑟夫问题                                       | 来自SarKozyFan            |
 | 35 | homework/BMITest.java                   | BMI类                                        | 作业                      |
 | 36 | homework/bigIntegerTest.java            | 计算出大于Long.MAX_VALUE的前十个平方数                  | 作业                      |
 | 37 | practice/ATMTest.java                   | ATM类                                        | 10.7                    |
@@ -118,6 +118,14 @@ practice/BooleanWrapper.java 提供可以在方法内部修改并传递到方法
 | 51 | practice/RandomPassword.java            | 输出复杂度足够高的随机密码                               |
 | 52 | practice/RandomPasswordWithHistory.java | 51的增强版，能在工作目录下输出密码历史（请注意安全）                 |
 
+
+更新历史
+3.21 初始提交： test.java time.java sumDigit.java triangleArea.java daysInMonth.java SRPGame.java
+3.27 技术更新： time.java  新增：SRPGameWin2.java numberPyramid.java
+3.28 开放仓库 添加LICENSE  新增：cityOrder.java
+
+
+8.22 安全性更新： SecureRandom加入enhancedRandom/RandomPassword RandomPassword增加安全模式 README加入文件历史
 
 跨Class引用函数关系如下：
 

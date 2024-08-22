@@ -21,21 +21,12 @@ public class RandomPassword {
             "(", ")", "_", "+", "-", "=", "[", "]",
             "{", "}", "|", ";", ":", "'", ",", ".",
             "<", ">", "/", "?"};
-    static String[] AllSymbols = {
-            "1", "2", "3", "4", "5",
-            "6", "7", "8", "9", "0",
-            "A", "B", "C", "D", "E", "F", "G",
-            "H", "I", "J", "K", "L", "M", "N",
-            "O", "P", "Q", "R", "S", "T", "U",
-            "V", "W", "X", "Y", "Z",
-            "a", "b", "c", "d", "e", "f", "g",
-            "h", "i" ,"j", "k", "l", "m", "n",
-            "o", "p", "q", "r", "s", "t", "u",
-            "v", "w", "x", "y", "z",
-            "!", "@", "#", "$", "%", "^", "&", "*",
-            "(", ")", "_", "+", "-", "=", "[", "]",
-            "{", "}", "|", ";", ":", "'", ",", ".",
-            "<", ">", "/", "?"};
+    static String[] AllSymbols = new String[95];
+    static {
+        for (int i = 32; i < 127; i++) {
+            AllSymbols[i - 32] = Character.toString((char) i);
+        }
+    }
     static String[] NoSymbols = {
             "1", "2", "3", "4", "5",
             "6", "7", "8", "9", "0",
@@ -57,9 +48,22 @@ public class RandomPassword {
         return GeneratePassword(PasswordType, Temp);
     }
 
+    public static String[][] GenerateSecureRandomPassword() throws Exception {
+        Scanner sc = new Scanner(System.in);
+        String[][] Temp = new String[20][16];
+        System.out.print("Enter the type of Password, 1 for 4*4, 2 for all random, 3 for all random but no symbols:");
+        int PasswordType = sc.nextInt();
+        return GenerateSecurePassword(PasswordType, Temp);
+    }
+
     public static String[][] GenerateRandomPasswordWithSpecialFormat(int Quantity, int Length) throws Exception {
         String[][] Temp = new String[Quantity][Length];
         return GeneratePassword(2, Temp);
+    }
+
+    public static String[][] GenerateSecureRandomPasswordWithSpecialFormat(int Quantity, int Length) throws Exception {
+        String[][] Temp = new String[Quantity][Length];
+        return GenerateSecurePassword(2, Temp);
     }
 
     public static String[][] GeneratePassword(int PasswordType , String[][] Password) throws Exception {
@@ -94,6 +98,51 @@ public class RandomPassword {
             for (int j = 0; j < enhancedRandom.getRandom(50,100); j++) {
                 int q = enhancedRandom.getRandom(0, Password[i].length);
                 int m = enhancedRandom.getRandom(0, Password[i].length);
+                if (m==q){
+                    j = -1;
+                    continue;
+                }
+                String temp = Password[i][q];
+                Password[i][q] = Password[i][m];
+                Password[i][m] = temp;
+            }
+            arrayTest.printStringArrayNoSpace(Password[i],Password[i].length);
+        }
+        return Password;
+    }
+
+    public static String[][] GenerateSecurePassword(int PasswordType , String[][] Password) throws Exception {
+        if (PasswordType == 1) {
+            for (int i = 0; i < Password.length; i++) {
+                for (int k = 0; k < 4; k++) {
+                    Password[i][k] = Numbers[enhancedRandom.getSecureRandom(0, Numbers.length)];
+                    Password[i][k+4] = Capitals[enhancedRandom.getSecureRandom(0, Capitals.length)];
+                    Password[i][k+8] = Lowercases[enhancedRandom.getSecureRandom(0, Lowercases.length)];
+                    Password[i][k+12] = Symbols[enhancedRandom.getSecureRandom(0, Symbols.length)];
+                }
+            }
+        }
+        else if (PasswordType == 2) {
+            for (int i = 0; i < Password.length; i++) {
+                for (int k = 0; k < Password[i].length; k++) {
+                    Password[i][k] = AllSymbols[enhancedRandom.getSecureRandom(0, AllSymbols.length)];
+                }
+            }
+        }
+        else if (PasswordType == 3) {
+            for (int i = 0; i < Password.length; i++) {
+                for (int k = 0; k < Password[i].length; k++) {
+                    Password[i][k] = NoSymbols[enhancedRandom.getSecureRandom(0, NoSymbols.length)];
+                }
+            }
+        }
+        else {
+            throw new Exception("RandomPassword.InvalidTypeError");
+        }
+        for (int i = 0; i < Password.length; i++) {
+            for (int j = 0; j < enhancedRandom.getSecureRandom(50,100); j++) {
+                int q = enhancedRandom.getSecureRandom(0, Password[i].length);
+                int m = enhancedRandom.getSecureRandom(0, Password[i].length);
                 if (m==q){
                     j = -1;
                     continue;
