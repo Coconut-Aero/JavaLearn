@@ -7,7 +7,7 @@
 
 [![Banner](https://s21.ax1x.com/2024/05/01/pkkuwQg.png)](https://imgse.com/i/pkkuwQg)
 
-_Updated 2024-08-22 23:45 CST_
+_Updated 2024-08-23 15:00 CST_
 
 A Java Repository for learning purpose of Coconut-Aero
 
@@ -117,17 +117,22 @@ practice/BooleanWrapper.java 提供可以在方法内部修改并传递到方法
 | 50 |       practice/HOI4FastCore.java        |        输出一个文件，可用于HOI4获取所有地区的核心（测试阶段）        |
 | 51 |      practice/RandomPassword.java       |                输出复杂度足够高的随机密码                |
 | 52 | practice/RandomPasswordWithHistory.java |         51的增强版，能在工作目录下输出密码历史（请注意安全）         |
+| 53 |    practice/StatisticRepoFiles.java     |                   统计本仓库信息                   |
 
 
 更新历史
+
 3.21 初始提交： test.java time.java sumDigit.java triangleArea.java daysInMonth.java SRPGame.java
 
 3.27 技术更新： time.java  新增：SRPGameWin2.java numberPyramid.java
 
 3.28 开放仓库 添加LICENSE  新增：cityOrder.java
 
+(本区域尚处于施工阶段)
 
 8.22 安全性更新： SecureRandom加入enhancedRandom/RandomPassword RandomPassword增加安全模式 README加入文件历史
+
+8.23 新增：StatisticRepoFiles.java
 
 跨Class引用函数关系如下：
 

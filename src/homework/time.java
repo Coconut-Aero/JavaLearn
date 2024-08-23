@@ -7,8 +7,7 @@ public class time
         System.out.println(TimeStampToTime(System.currentTimeMillis()));
     }
     public static String TimeStampToTime (long time) {
-        long totalMiS = time;
-        long totalSEC = totalMiS / 1000;
+        long totalSEC = time / 1000;
         long totalMIN = totalSEC / 60;
         long totalHOU = totalMIN / 60;
         long totalDAY = totalHOU / 24;

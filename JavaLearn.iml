@@ -7,5 +7,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="logback-classic-1.5.7" level="project" />
+    <orderEntry type="library" name="logback-core-1.5.7" level="project" />
+    <orderEntry type="library" name="slf4j-api-2.0.9" level="project" />
   </component>
 </module>
