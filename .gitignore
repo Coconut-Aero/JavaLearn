@@ -34,3 +34,4 @@ bin/
 /.idea/libraries/logback_classic_1_5_7.xml
 /.idea/libraries/logback_core_1_5_7.xml
 /.idea/libraries/slf4j_api_2_0_9.xml
+/.idea/.name
