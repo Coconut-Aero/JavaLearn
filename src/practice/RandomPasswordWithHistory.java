@@ -30,7 +30,7 @@ public class RandomPasswordWithHistory {
             System.exit(1);
         }
 
-        System.out.println("Local time is "+ date);
+        System.out.println("Local Time is "+ date);
 
         System.out.print("Information Recording?(Y/N)");
         String cmd1 = sc.nextLine();

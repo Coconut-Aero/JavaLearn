@@ -7,7 +7,7 @@
 
 [![Banner](https://s21.ax1x.com/2024/05/01/pkkuwQg.png)](https://imgse.com/i/pkkuwQg)
 
-_Updated 2024-08-29 9:00 CST_
+_Updated 2024-09-16 2:00 CST_
 
 A Java Repository for learning purpose of Coconut-Aero
 
@@ -118,7 +118,7 @@ practice/BooleanWrapper.java 提供可以在方法内部修改并传递到方法
 | 51 |      practice/RandomPassword.java       |                输出复杂度足够高的随机密码                |
 | 52 | practice/RandomPasswordWithHistory.java |         51的增强版，能在工作目录下输出密码历史（请注意安全）         |
 | 53 |    practice/StatisticRepoFiles.java     |                   统计本仓库信息                   |
-
+| 54 |
 
 更新历史
 

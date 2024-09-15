@@ -32,7 +32,7 @@ public class repeatedInArray {
             if (time == 0) {
                 System.out.println("No repeated integer");
             }else if (time == 1){
-                System.out.println(sortedNums[i] + " occurs " + time + " homework.time");
+                System.out.println(sortedNums[i] + " occurs " + time + " time");
             }else {
                 System.out.println(sortedNums[i] + " occurs " + time + " times");
             }

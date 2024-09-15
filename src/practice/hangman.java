@@ -56,8 +56,8 @@ public class hangman {
                     exit = true;
                 }
             }
-            System.out.println("The word is " + chosenword + ". You missed " + miss + " homework.time(s).");
-            System.out.print("Do you want to guess another homework.time? (Y/N)>");
+            System.out.println("The word is " + chosenword + ". You missed " + miss + " time(s).");
+            System.out.print("Do you want to guess another time? (Y/N)>");
             String request = input.next();
             again= !request.equals("Y") && !request.equals("y");
         }
