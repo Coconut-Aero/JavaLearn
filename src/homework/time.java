@@ -9,6 +9,8 @@ public class Time
         Time time = new Time();
         System.out.println(time.TimeStampToTime());
         System.out.println(time.TimeStampToTimeByZone(8,"+"));
+        System.out.println(time.TimeStampToTimeByZone(1,"+"));
+        System.out.println(time.TimeStampToTimeByZone(5,"-"));
     }
     static long totalSecond;
     static long totalMinute;
@@ -127,50 +129,10 @@ public class Time
 
 
     public String TimeStampToTimeByZone(int ZoneNum, String PN) throws Exception {
-        if (Objects.equals(PN, "+")) {
-            if (currentHour + ZoneNum < 24) {
-                currentHour += ZoneNum;
-            } else if ((currentHour + ZoneNum >= 24) && OutDayInMonth()) {
-                currentHour = currentHour + ZoneNum - 24;
-                currentDay += 1;
-            } else if ((currentHour + ZoneNum >= 24) && !OutDayInMonth()) {
-                if (month == 12) {
-                    currentYear += 1;
-                    currentMonth = 1;
-                } else {
-                    currentMonth += 1;
-                }
-                currentDay = 1;
-                currentHour = currentHour + ZoneNum - 24;
-            }
-        } else if (Objects.equals(PN, "-")) {
-            if (currentHour + ZoneNum >= 0) {
-                currentHour -= ZoneNum;
-            } else if ((currentHour + ZoneNum < 0) && currentDay != 1) {
-                currentDay -= 1;
-                currentHour = currentHour - ZoneNum + 24;
-            } else if ((currentHour + ZoneNum < 0) && currentDay == 1) {
-                currentHour = currentHour - ZoneNum + 24;
-                if (currentMonth == 5 || currentMonth == 7 || currentMonth == 10 || currentMonth == 12) {
-                    currentMonth -= 1;
-                    currentDay = 30;
-                } else if (currentMonth == 2 || currentMonth == 4 || currentMonth == 6 || currentMonth == 8 || currentMonth == 9 || currentMonth == 11) {
-                    currentMonth -= 1;
-                    currentDay = 31;
-                } else if (currentMonth == 3) {
-                    currentMonth -= 1;
-                    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
-                        currentDay = 29;
-                    } else currentDay = 28;
-                } else {
-                    currentMonth = 12;
-                    currentDay = 31;
-                    currentYear -= 1;
-                }
-            }
-        } else throw new Exception("time.InvalidCommandError");
+        long[] ChangedZone = TimeZone(ZoneNum, PN);
+
         return String.format("%d-%02d-%02d %02d:%02d:%02d UTC%s%d",
-                currentYear, currentMonth, currentDay, currentHour, currentMinute, currentSecond, PN, ZoneNum);
+                ChangedZone[0], ChangedZone[1], ChangedZone[2], ChangedZone[3], currentMinute, currentSecond, PN, ZoneNum);
     }
     public static boolean OutDayInMonth(){
         return (
@@ -180,6 +142,66 @@ public class Time
                         ((currentDay + 1 < 30) && (currentMonth == 2 ) && ((year%4==0&&year%100!=0)||(year%400==0)))||
                         ((currentDay + 1 < 29) && (currentMonth == 2 ) && !((year%4==0&&year%100!=0)||(year%400==0))));
     }
-
-
+    public static long[] TimeZone (int ZoneNum, String PN) throws Exception {
+        long[] ChangedZone = new long[4];
+        /*
+            ChangedZone[0] = Year
+            ChangedZone[1] = Month
+            ChangedZone[2] = Day
+            ChangedZone[3] = Hour
+        */
+        if (Objects.equals(PN, "+")) {
+            if (currentHour + ZoneNum < 24) {
+                ChangedZone[0] = currentYear;
+                ChangedZone[1] = currentMonth;
+                ChangedZone[2] = currentDay;
+                ChangedZone[3] = currentHour + ZoneNum;
+            } else if ((currentHour + ZoneNum >= 24) && OutDayInMonth()) {
+                ChangedZone[3] = currentHour + ZoneNum - 24;
+                ChangedZone[2] = currentDay + 1;
+                ChangedZone[0] = currentYear;
+                ChangedZone[1] = currentMonth;
+            } else if ((currentHour + ZoneNum >= 24) && !OutDayInMonth()) {
+                if (month == 12) {
+                    ChangedZone[0] = currentYear + 1;
+                    ChangedZone[1]  = 1;
+                } else {
+                    ChangedZone[1] = currentMonth + 1;
+                }
+                ChangedZone[2] = 1;
+                ChangedZone[3] = currentHour + ZoneNum - 24;
+            }
+        } else if (Objects.equals(PN, "-")) {
+            if (currentHour + ZoneNum >= 0) {
+                ChangedZone[0] = currentYear;
+                ChangedZone[1] = currentMonth;
+                ChangedZone[2] = currentDay;
+                ChangedZone[3] = currentHour - ZoneNum;
+            } else if ((currentHour + ZoneNum < 0) && currentDay != 1) {
+                ChangedZone[0] = currentYear;
+                ChangedZone[1] = currentMonth;
+                ChangedZone[2] = currentDay - 1;
+                ChangedZone[3] = currentHour - ZoneNum + 24;
+            } else if ((currentHour + ZoneNum < 0) && currentDay == 1) {
+                ChangedZone[3] = currentHour - ZoneNum + 24;
+                if (currentMonth == 5 || currentMonth == 7 || currentMonth == 10 || currentMonth == 12) {
+                    ChangedZone[1] = currentMonth - 1;
+                    ChangedZone[2] = 30;
+                } else if (currentMonth == 2 || currentMonth == 4 || currentMonth == 6 || currentMonth == 8 || currentMonth == 9 || currentMonth == 11) {
+                    ChangedZone[1] = currentMonth - 1;
+                    ChangedZone[2] = 31;
+                } else if (currentMonth == 3) {
+                    ChangedZone[1] = currentMonth - 1;
+                    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+                        ChangedZone[2] = 29;
+                    } else ChangedZone[2] = 28;
+                } else {
+                    ChangedZone[1]  = 12;
+                    ChangedZone[2] = 31;
+                    ChangedZone[0] = currentYear - 1;
+                }
+            }
+        } else throw new Exception("time.InvalidCommandError");
+        return ChangedZone;
+    }
 }
