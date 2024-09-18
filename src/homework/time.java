@@ -26,6 +26,37 @@ public class Time
     static long currentYear;
     static int month = 1;
     static int year=1970;
+    static String[][] timeZone = {
+            {"-", "12", "Baker Island (BIT)"},
+            {"-", "11", "American Samoa (SST)"},
+            {"-", "10", "Hawaii (HST), Tahiti (TAHT)"},
+            {"-", "9", "Alaska (AKST)"},
+            {"-", "8", "Pacific Standard Time (PST), Vancouver (PST)"},
+            {"-", "7", "Mountain Standard Time (MST)"},
+            {"-", "6", "Central Standard Time (CST), Mexico City (CST)"},
+            {"-", "5", "Eastern Standard Time (EST), Colombia (COT)"},
+            {"-", "4", "Atlantic Standard Time (AST), Venezuela (VET), Puerto Rico (AST)"},
+            {"-", "3", "Brazil (BRT), Argentina (ART)"},
+            {"-", "2", "South Georgia (GST)"},
+            {"-", "1", "Azores (AZOT), Cape Verde (CVT)"},
+            {"+", "0", "Greenwich Mean Time (GMT), Iceland (GMT), Portugal (WET)"},
+            {"+", "1", "Central European Time (CET), Germany (CET), France (CET), British Summer Time (BST)"},
+            {"+", "2", "Eastern European Time (EET), Israel (IST), Greece (EET)"},
+            {"+", "3", "Moscow Standard Time (MSK), Turkey (TRT), Saudi Arabia (AST)"},
+            {"+", "4", "Gulf Standard Time (GST), Azerbaijan (AZT), United Arab Emirates (UAE)"},
+            {"+", "5", "Pakistan Standard Time (PKT), Uzbekistan (UZT)"},
+            {"+", "6", "Bangladesh Standard Time (BST), Kazakhstan (ALMT)"},
+            {"+", "7", "Indochina Time (ICT), Thailand (ICT), Vietnam (ICT)"},
+            {"+", "8", "China Standard Time (CST), Singapore (SGT), Malaysia (MYT), Australia Western Standard Time (AWST)"},
+            {"+", "9", "Japan Standard Time (JST), Korea Standard Time (KST)"},
+            {"+", "10", "Australian Eastern Standard Time (AEST), Guam (ChST)"},
+            {"+", "11", "Solomon Islands (SBT), New Caledonia (NCT)"},
+            {"+", "12", "New Zealand Standard Time (NZST), Fiji (FJT)"},
+            {"+", "13", "Tonga Time (TOT), Samoa (WST)"}
+    };
+
+
+
 
     public Time(){
         totalSecond = System.currentTimeMillis() / 1000;
@@ -130,9 +161,15 @@ public class Time
 
     public String TimeStampToTimeByZone(int ZoneNum, String PN) throws Exception {
         long[] ChangedZone = TimeZone(ZoneNum, PN);
+        String ZoneName;
+        if(Objects.equals(PN, "+")){
+            ZoneName=timeZone[12+ZoneNum][2];
+        }else {
+            ZoneName=timeZone[12-ZoneNum][2];
+        }
 
-        return String.format("%d-%02d-%02d %02d:%02d:%02d UTC%s%d",
-                ChangedZone[0], ChangedZone[1], ChangedZone[2], ChangedZone[3], currentMinute, currentSecond, PN, ZoneNum);
+        return String.format("%d-%02d-%02d %02d:%02d:%02d UTC%s%d %s",
+                ChangedZone[0], ChangedZone[1], ChangedZone[2], ChangedZone[3], currentMinute, currentSecond, PN, ZoneNum, ZoneName);
     }
     public static boolean OutDayInMonth(){
         return (
