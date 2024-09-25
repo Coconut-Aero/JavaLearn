@@ -1,64 +1,24 @@
-# Java-Learn
+# <div align="center">Repository of JavaLearn </div>
 
-------------------------------------------------------------------------
+<p style="text-align: center;">
+ <img src="https://img.shields.io/badge/license-GPL_3.0%20license-yellow" alt="License">
+ <img src="https://img.shields.io/badge/language-java-red" alt="Language">
+ <img src="https://img.shields.io/github/last-commit/Coconut-Aero/JavaLearn" alt="Last Commit">
+ <img src="https://img.shields.io/badge/Coconut-Aero-blue" alt="Coconut-Aero">
+</p>
 
-[![last commit](https://img.shields.io/github/last-commit/Coconut-Aero/JavaLearn)](https://github.com/Coconut-Aero/JavaLearn/commits/master)
-[![Static Badge](https://img.shields.io/badge/Coconut-Aero-blue)](https://github.com/Coconut-Aero)
-
-[![Banner](https://s21.ax1x.com/2024/05/01/pkkuwQg.png)](https://imgse.com/i/pkkuwQg)
+<p style="text-align: center;">
+    <img src="https://s21.ax1x.com/2024/05/01/pkkuwQg.png" alt="Project FrontStar">
+</p>
 
 _Updated 2024-09-18 20:00 CST_
 
-A Java Repository for learning purpose of Coconut-Aero
+> [!NOTE]  
+> 您可以自由地使用本仓库，除非您违反 GNU Public License v3.0 协议中的相关内容。
+> 您可以修改本仓库中的代码，但您保证修改后的代码按照与本仓库类似的方式进行开源。
 
-A part of  **Project / FrontStar**
-
-## 特别注意
-您可以自由地使用本仓库，除非您违反 GNU Public License v3.0 协议中的相关内容。
-您可以修改本仓库中的代码，但您保证修改后的代码按照与本仓库类似的方式进行开源。
-
-## 特别声明 
-我们反对将此仓库内容上传到诸如GitCode等由中华人民共和国控制的存在闭源人工审核等机制的仓库内。
-
-## 相关信息
-practice/BooleanWrapper.java 提供可以在方法内部修改并传递到方法外的boolean类型 BooleanWrapper
-
-可以调用的方法：
-
-| 来源                               |     类型     | 用法                                                                            |
-|----------------------------------|:----------:|-------------------------------------------------------------------------------|
-| homework/arrayTest.java          |    void    | printArr(int[] arr,int size)                                                  |
-| practice/quadSolve.java          |    int     | solveQuadratic(double[] eqn, practice.BooleanWrapper haveRoot, double[] root) |
-| practice/sorted.java             |  boolean   | IsSorted(int[] list)                                                          |
-| practice/mergeArray.java         |   int[]    | merge(int[] list1,int[] list2)                                                |
-| practice/sorted.java             |   int[]    | Sort(int[] res)                                                               |
-| practice/eightQueens.java        |    void    | eightQueenBool2DArrayPrint(boolean[][] arr)                                   |
-| practice/eightQueens.java        |    void    | solveEightQueens(boolean[][] board, int row)                                  |
-| practice/eightQueens.java        |  boolean   | eightQueenValid(boolean[][] arr,int row, int col)                             |
-| homework/enhancedRandom.java     |    int     | getRandomExcept(int start, int end, int... numbers)                           |
-| homework/enhancedRandom.java     |    int     | getRandom(int start, int end )                                                |
-| practice/galtonBoard.java        |  boolean   | BooleanRandom()                                                               |
-| practice/sumColumnTest.java      |   double   | sumColumn(double[][] m, int columnIndex)                                      |
-| homework/addMatrixTest.java      | double[][] | addMatrix(double[][] matrix1, double[][] matrix2)                             |
-| homework/maxRowCol.java          |    int     | findMax(int[] matrix)                                                         |
-| practice/multiplyMatrixTest.java | double[][] | multiplyMatrix(double[][] matrix1, double[][] matrix2)                        |
-| homework/SRPGame.java            |    void    | SRPGamePlay(int player, int computer)                                         |
-
-
-
-| 序号 |               文件名                | 类名                                                                                   |
-|----|:--------------------------------:|--------------------------------------------------------------------------------------|
-| 1  |   homework/rectangleTest.java    | rectangleTest ，Rectangle                                                             |
-| 2  |    practice/buckshotTest.java    | buckshotTest，buckshot                                                                |
-| 3  | practice/circleNumberReport.java | circleNumberReport，Constants                                                         |
-| 4  |      homework/BMITest.java       | BMITest，BMI                                                                          |
-| 5  |      practice/ATMTest.java       | ATMTest，ATM                                                                          |
-| 6  |   homework/TriangleClass.java    | GeometricObject，Triangle（extends）                                                    |
-| 7  |    homework/AccountTest.java     | AccountTest，Account，CheckingAccount（extends），SavingsAccount（extends）                 |
-| 8  |    practice/PrimeNumber.java     | PrimeNumber，StackOfIntegers                                                          |
-| 9  |     homework/PersonTest.java     | PersonTest，Person，Employee（extends），Faculty（extends），Staff（extends），Student（extends） |
-| 10 |      homework/DateTest.java      | DateTest，Date                                                                        |
-
+> [!IMPORTANT]  
+> A Java Repository for learning purpose of Coconut-Aero A part of  **Project / FrontStar**
 
 
 包含：
@@ -120,21 +80,7 @@ practice/BooleanWrapper.java 提供可以在方法内部修改并传递到方法
 | 53 |    practice/StatisticRepoFiles.java     |                   统计本仓库信息                   |
 | 54 |
 
-更新历史
 
-3.21 初始提交： test.java time.java sumDigit.java triangleArea.java daysInMonth.java SRPGame.java
-
-3.27 技术更新： time.java  新增：SRPGameWin2.java numberPyramid.java
-
-3.28 开放仓库 添加LICENSE  新增：cityOrder.java
-
-(本区域尚处于施工阶段)
-
-8.22 安全性更新： SecureRandom加入enhancedRandom/RandomPassword RandomPassword增加安全模式 README加入文件历史
-
-8.23 新增：StatisticRepoFiles.java
-
-跨Class引用函数关系如下：
 
 | 序号 | 引用自                          | 引用到                             | 引用方法/类型的名称      |
 |----|------------------------------|---------------------------------|-----------------|
