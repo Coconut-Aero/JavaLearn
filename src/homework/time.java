@@ -6,26 +6,35 @@ public class Time
 {
     public static void main(String[] args) throws Exception
     {
-        Time time = new Time();
-        System.out.println(time.TimeStampToTime());
-        System.out.println(time.TimeStampToTimeByZone(8,"+"));
-        System.out.println(time.TimeStampToTimeByZone(1,"+"));
-        System.out.println(time.TimeStampToTimeByZone(5,"-"));
+        Time time1 = new Time(1727315938);
+        Time time2 = new Time();
+        System.out.println(System.currentTimeMillis());
+        System.out.println(time1.TimeStampToTime());
+        System.out.println(time1.TimeStampToTimeByZone(8,"+"));
+        System.out.println(time1.TimeStampToTimeByZone(1,"+"));
+        System.out.println(time1.TimeStampToTimeByZone(5,"-"));
+
+        System.out.println(time2.TimeStampToTime());
+        System.out.println(time2.TimeStampToTimeByZone(8,"+"));
+        System.out.println(time2.TimeStampToTimeByZone(1,"+"));
+        System.out.println(time2.TimeStampToTimeByZone(5,"-"));
+        System.out.println();
     }
-    static long totalSecond;
-    static long totalMinute;
-    static long totalHour;
-    static long totalDay;
-    static long currentSecond;
-    static long currentMinute;
-    static long currentHour;
-    static long StartDayInMonth = 31;
-    static long totalMonth;
-    static long currentDay;
-    static long currentMonth;
-    static long currentYear;
-    static int month = 1;
-    static int year=1970;
+
+    long totalSecond;
+    long totalMinute;
+    long totalHour;
+    long totalDay;
+    long currentSecond;
+    long currentMinute;
+    long currentHour;
+    long StartDayInMonth = 31;
+    long totalMonth;
+    long currentDay;
+    long currentMonth;
+    long currentYear;
+    int month = 1;
+    int year=1970;
     static String[][] timeZone = {
             {"-", "12", "Baker Island (BIT)"},
             {"-", "11", "American Samoa (SST)"},
@@ -55,9 +64,6 @@ public class Time
             {"+", "13", "Tonga Time (TOT), Samoa (WST)"}
     };
 
-
-
-
     public Time(){
         totalSecond = System.currentTimeMillis() / 1000;
         totalMinute = totalSecond / 60;
@@ -66,7 +72,6 @@ public class Time
         currentSecond = totalSecond % 60;
         currentMinute = totalMinute % 60;
         currentHour = totalHour % 24;
-        StartDayInMonth = 31;
         while(totalDay >= StartDayInMonth){
             switch (month){
                 case 1:
@@ -106,15 +111,14 @@ public class Time
         currentYear = year;
     }
 
-    public Time(long timeMills){
-        totalSecond = timeMills / 1000;
+    public Time(long timeSecond){
+        totalSecond = timeSecond;
         totalMinute = totalSecond / 60;
         totalHour = totalMinute / 60;
         totalDay = totalHour / 24;
         currentSecond = totalSecond % 60;
         currentMinute = totalMinute % 60;
         currentHour = totalHour % 24;
-        StartDayInMonth = 31;
         while(totalDay >= StartDayInMonth){
             switch (month){
                 case 1:
@@ -171,7 +175,7 @@ public class Time
         return String.format("%d-%02d-%02d %02d:%02d:%02d UTC%s%d %s",
                 ChangedZone[0], ChangedZone[1], ChangedZone[2], ChangedZone[3], currentMinute, currentSecond, PN, ZoneNum, ZoneName);
     }
-    public static boolean OutDayInMonth(){
+    public boolean OutDayInMonth(){
         return (
                 ((currentDay + 1 < 32) && (currentMonth == 1 || currentMonth == 3 || currentMonth == 5 || currentMonth == 7
                         || currentMonth == 8 || currentMonth == 10 || currentMonth == 12)) ||
@@ -179,7 +183,7 @@ public class Time
                         ((currentDay + 1 < 30) && (currentMonth == 2 ) && ((year%4==0&&year%100!=0)||(year%400==0)))||
                         ((currentDay + 1 < 29) && (currentMonth == 2 ) && !((year%4==0&&year%100!=0)||(year%400==0))));
     }
-    public static long[] TimeZone (int ZoneNum, String PN) throws Exception {
+    public long[] TimeZone (int ZoneNum, String PN) throws Exception {
         long[] ChangedZone = new long[4];
         /*
             ChangedZone[0] = Year
@@ -209,17 +213,17 @@ public class Time
                 ChangedZone[3] = currentHour + ZoneNum - 24;
             }
         } else if (Objects.equals(PN, "-")) {
-            if (currentHour + ZoneNum >= 0) {
+            if (currentHour - ZoneNum >= 0) {
                 ChangedZone[0] = currentYear;
                 ChangedZone[1] = currentMonth;
                 ChangedZone[2] = currentDay;
                 ChangedZone[3] = currentHour - ZoneNum;
-            } else if ((currentHour + ZoneNum < 0) && currentDay != 1) {
+            } else if ((currentHour - ZoneNum < 0) && currentDay != 1) {
                 ChangedZone[0] = currentYear;
                 ChangedZone[1] = currentMonth;
                 ChangedZone[2] = currentDay - 1;
                 ChangedZone[3] = currentHour - ZoneNum + 24;
-            } else if ((currentHour + ZoneNum < 0) && currentDay == 1) {
+            } else if ((currentHour - ZoneNum < 0) && currentDay == 1) {
                 ChangedZone[3] = currentHour - ZoneNum + 24;
                 if (currentMonth == 5 || currentMonth == 7 || currentMonth == 10 || currentMonth == 12) {
                     ChangedZone[1] = currentMonth - 1;

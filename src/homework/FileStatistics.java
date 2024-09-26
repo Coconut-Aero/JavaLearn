@@ -32,7 +32,7 @@ public class FileStatistics {
             lineScanner.close();
         }
         input.close();
-        Time time = new Time(file.lastModified());
+        Time time = new Time(file.lastModified() / 1000);
         System.out.println("Last Modified Time " + time.TimeStampToTime());
         System.out.println(character + " characters ");
         System.out.println(word + " words ");
