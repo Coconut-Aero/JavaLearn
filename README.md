@@ -78,18 +78,3 @@ _Updated 2024-09-18 20:00 CST_
 | 51 |      practice/RandomPassword.java       |                输出复杂度足够高的随机密码                |
 | 52 | practice/RandomPasswordWithHistory.java |         51的增强版，能在工作目录下输出密码历史（请注意安全）         |
 | 53 |    practice/StatisticRepoFiles.java     |                   统计本仓库信息                   |
-| 54 |
-
-
-
-| 序号 | 引用自                          | 引用到                             | 引用方法/类型的名称      |
-|----|------------------------------|---------------------------------|-----------------|
-| 1  | practice/BooleanWrapper.java | practice/quadSolve.java         | BooleanWrapper  |
-| 2  | homework/arrayTest.java      | practice/sorted.java            | printArr()      |
-| 3  | homework/arrayTest.java      | practice/mergeArray.java        | printArr()      |
-| 4  | practice/sorted.java         | practice/mergeArray.java        | IsSorted()      |
-| 5  | practice/sorted.java         | practice/mergeArray.java        | Sort()          |
-| 6  | practice/sorted.java         | practice/repeatedInArray.java   | Sort()          |
-| 7  | homework/enhancedRandom.java | practice/galtonBoard.java       | getRandom()     |
-| 8  | homework/enhancedRandom.java | practice/numberSingleDigit.java | getRandom()     |
-| 9  | practice/galtonBoard.java    | homework/maxRowCol.java         | BooleanRandom() |
