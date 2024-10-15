@@ -1,20 +1,20 @@
 # <div align="center">Repository of JavaLearn </div>
 
-<p style="text-align: center;">
+<div align="center">
  <img src="https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk" alt="Language">
  <img src="https://img.shields.io/github/last-commit/Coconut-Aero/JavaLearn" alt="Last Commit">
  <img src="https://img.shields.io/badge/Coconut-Aero-blue" alt="Coconut-Aero">
  <img src="https://img.shields.io/github/license/Coconut-Aero/JavaLearn.svg?logo=github" alt="license">
- <img src="https://img.shields.io/badge/IntelliJ%20IDEA-000000.svg?style=for-the-badge&logo=intellijidea&logoColor=ffffff" alt="">
-</p>
+ <img src="https://img.shields.io/badge/IntelliJ%20IDEA-000000.svg?logo=intellijidea&logoColor=ffffff" alt="">
+</div>
 
-<p style="text-align: center;">
+<div align="center">
     <img src="https://s21.ax1x.com/2024/05/01/pkkuwQg.png" alt="Project FrontStar">
-</p>
+</div>
 
-<p style="text-align: center">
+<div align="center">
     <img src="https://repobeats.axiom.co/api/embed/27ce6bd37eab416283d74a89a476193d9522f2bd.svg " alt="Repobeats analytics image">
-</p>
+</div>
 
 > [!NOTE]  
 > 您可以自由地使用本仓库，除非您违反 GNU Public License v3.0 协议中的相关内容。
