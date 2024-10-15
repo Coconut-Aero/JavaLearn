@@ -1,24 +1,30 @@
 # <div align="center">Repository of JavaLearn </div>
 
 <p style="text-align: center;">
- <img src="https://img.shields.io/badge/license-GPL_3.0%20license-yellow" alt="License">
- <img src="https://img.shields.io/badge/language-java-red" alt="Language">
+ <img src="https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk" alt="Language">
  <img src="https://img.shields.io/github/last-commit/Coconut-Aero/JavaLearn" alt="Last Commit">
  <img src="https://img.shields.io/badge/Coconut-Aero-blue" alt="Coconut-Aero">
+ <img src="https://img.shields.io/github/license/Coconut-Aero/JavaLearn.svg?logo=github" alt="license">
+ <img src="https://img.shields.io/badge/IntelliJ%20IDEA-000000.svg?style=for-the-badge&logo=intellijidea&logoColor=ffffff" alt="">
 </p>
 
 <p style="text-align: center;">
     <img src="https://s21.ax1x.com/2024/05/01/pkkuwQg.png" alt="Project FrontStar">
 </p>
 
-_Updated 2024-09-27 02:30 CST_
+<p style="text-align: center">
+    <img src="https://repobeats.axiom.co/api/embed/27ce6bd37eab416283d74a89a476193d9522f2bd.svg " alt="Repobeats analytics image">
+</p>
 
 > [!NOTE]  
 > 您可以自由地使用本仓库，除非您违反 GNU Public License v3.0 协议中的相关内容。
+> 
 > 您可以修改本仓库中的代码，但您保证修改后的代码按照与本仓库类似的方式进行开源。
 
 > [!IMPORTANT]  
-> A Java Repository for learning purpose of Coconut-Aero A part of  **Project / FrontStar**
+> A Java Repository for learning purpose of Coconut-Aero
+> 
+>A part of  **Project / FrontStar**
 
 
 包含：
