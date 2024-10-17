@@ -13,7 +13,7 @@
 </div>
 
 <div align="center">
-    <img src="https://repobeats.axiom.co/api/embed/27ce6bd37eab416283d74a89a476193d9522f2bd.svg " alt="Repobeats analytics image">
+    <img src="https://repobeats.axiom.co/api/embed/27ce6bd37eab416283d74a89a476193d9522f2bd.svg" alt="Repobeats analytics image">
 </div>
 
 > [!NOTE]  
