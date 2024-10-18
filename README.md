@@ -16,6 +16,10 @@
     <img src="https://repobeats.axiom.co/api/embed/27ce6bd37eab416283d74a89a476193d9522f2bd.svg" alt="Repobeats analytics image">
 </div>
 
+<div align="center">
+    <img src="https://raw.githubusercontent.com/SAWARATSUKI/KawaiiLogos/refs/heads/main/IntelliJ%20IDEA/IntelliJ%20IDEA.png" alt="IntelliJ Idea">
+</div>
+
 > [!NOTE]  
 > 您可以自由地使用本仓库，除非您违反 GNU Public License v3.0 协议中的相关内容。
 > 
