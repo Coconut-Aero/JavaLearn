@@ -4,7 +4,7 @@
  <img src="https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk" alt="Language">
  <img src="https://img.shields.io/github/last-commit/polococonut/JavaLearn" alt="Last Commit">
  <img src="https://img.shields.io/badge/Coconut-Aero-blue" alt="Coconut-Aero">
- <img src="https://img.shields.io/github/license/polococonut/JavaLearn.svg?logo=github" alt="license">
+ <img src="https://img.shields.io/github/license/Coconut-Aero/JavaLearn.svg?logo=github" alt="license">
  <img src="https://img.shields.io/badge/IntelliJ%20IDEA-000000.svg?logo=intellijidea&logoColor=ffffff" alt="">
 </div>
 
