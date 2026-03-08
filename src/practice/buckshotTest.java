@@ -1,386 +1,296 @@
 package practice;
 
-import homework.enhancedRandom;
-
-import java.util.Objects;
+import homework.enhancedRandom; // 假设你自己定义了这个随机数生成器
 import java.util.Scanner;
+
 
 public class buckshotTest {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        String Player1Name, Player2Name, useProp = "", activePlayer = "", shotWho;
-        int Player1Health = 6, Player2Health = 6, playWho;
+
+        // 玩家相关信息初始化
+        String Player1Name, Player2Name;
+        int Player1Health = 6, Player2Health = 6;
         int[] Player1Prop = buckshot.createProp(), Player2Prop = buckshot.createProp();
-        boolean Player1Win = false, Player2Win = false, shotType;
-        boolean exit = false, knifeMore = false, Player1NoMove = false, Player2NoMove = false;
-        boolean[] shellType;
-        System.out.print("Enter Player 1 's name: ");
+        boolean Player1Win = false, Player2Win = false;
+        boolean exit = false;
+
+        System.out.print("Enter Player 1's name: ");
         Player1Name = input.nextLine();
-        System.out.print("Enter Player 2 's name: ");
+        System.out.print("Enter Player 2's name: ");
         Player2Name = input.nextLine();
-        while(!exit){
-            for(int i = 0; i < 3; i++){
-                while (Player1Health > 0 && Player2Health > 0){
-                    shellType = buckshot.shell();
-                    playWho = 1;
-                    for(int j = 0; j < shellType.length; j++){
-                        buckshot.PrintHealth(Player1Health,Player2Health,Player1Name,Player2Name);
-                        buckshot.printProp(Player1Prop , Player1Name);
-                        buckshot.printProp(Player2Prop , Player2Name);
-                        if (playWho == 1){
-                            while (!useProp.equals("no")){
-                                activePlayer = Player1Name;
-                                System.out.print("\033[H\033[2J");
-                                System.out.flush();
-                                buckshot.PrintHealth(Player1Health,Player2Health,Player1Name,Player2Name);
-                                buckshot.printProp(Player1Prop , Player1Name);
-                                buckshot.printProp(Player2Prop , Player2Name);
-                                System.out.println("It's " + activePlayer + "'s turn !");
-                                System.out.println("If you would not to use prop, you can just input \" no\"");
-                                System.out.println("Usage: cigarette/knife/drug/handcuff/magnify/adrenaline/phone/reverser/no");
-                                System.out.print( activePlayer + " , which prop would you like to use ? >: ");
-                                useProp = input.nextLine();
-                                switch (useProp){
-                                    case "cigarette":
-                                        if(Player1Health != 6) {
-                                            Player1Health++;
-                                        }
-                                    case "knife":
-                                        knifeMore = true;
-                                    case "drug":
-                                        boolean a = buckshot.drugEffect();
-                                        if(a){
-                                            Player1Health += 2;
-                                        }else{
-                                            Player1Health--;
-                                        }
-                                    case "handcuff":
-                                        Player2NoMove = true;
-                                    case "magnify":
-                                        buckshot.magnifyingGlass(shellType[j]);
-                                    case "adrenaline":
-                                        buckshot.adrenaline(Player2Prop,Player1Prop,Player1Name,Player2Name);
-                                    case "phone":
-                                        buckshot.SpecialPhone(shellType);
-                                    case "reverser":
-                                        buckshot.reverser(shellType , j);
+
+        while (!exit) {
+            // 三局比赛
+            for (int round = 1; round <= 3; round++) {
+                Player1Health = 6;
+                Player2Health = 6;
+                Player1Prop = buckshot.createProp();
+                Player2Prop = buckshot.createProp();
+
+                System.out.println("\n======= ROUND " + round + " START =======");
+
+                while (Player1Health > 0 && Player2Health > 0) {
+                    boolean[] shellType = buckshot.shell(); // 本回合子弹阵列
+                    int playWho = 1; // 1表示Player1，2表示Player2
+                    boolean knifeMore = false; // 是否用刀（加倍伤害）
+                    boolean Player1NoMove = false;
+                    boolean Player2NoMove = false;
+
+                    for (int j = 0; j < shellType.length; j++) {
+                        buckshot.PrintHealth(Player1Health, Player2Health, Player1Name, Player2Name);
+                        buckshot.printProp(Player1Prop, Player1Name);
+                        buckshot.printProp(Player2Prop, Player2Name);
+
+                        String activePlayer = (playWho == 1) ? Player1Name : Player2Name;
+                        int[] activeProp = (playWho == 1) ? Player1Prop : Player2Prop;
+                        int[] enemyProp = (playWho == 1) ? Player2Prop : Player1Prop;
+                        boolean activeNoMove = (playWho == 1) ? Player1NoMove : Player2NoMove;
+                        boolean enemyNoMove = (playWho == 1) ? Player2NoMove : Player1NoMove;
+                        int activeHealth = (playWho == 1) ? Player1Health : Player2Health;
+                        int enemyHealth = (playWho == 1) ? Player2Health : Player1Health;
+
+                        // --- 道具阶段 ---
+                        knifeMore = false; // 每回合初始化刀效果
+                        boolean usedPropStage = true;
+                        while (usedPropStage) {
+                            System.out.println("\nIt's " + activePlayer + "'s turn!");
+                            System.out.println("Do you want to use a prop? (cigarette/knife/drug/handcuff/magnify/adrenaline/phone/reverser/no)");
+                            System.out.print("> ");
+                            String useProp = input.nextLine().trim().toLowerCase();
+
+                            if (useProp.equals("no")) {
+                                usedPropStage = false;
+                            } else {
+                                boolean success = buckshot.useProp(useProp, activeProp, enemyProp, shellType, j);
+                                if (useProp.equals("knife")) {
+                                    knifeMore = true;
                                 }
-                            }
-                            System.out.println("SHOT TIME. It's " + activePlayer + "'s turn !");
-                            System.out.println("You are going to shot who? (You/Opposite)");
-                            shotWho = input.nextLine();
-                            shotType=buckshot.shot(shellType[j]);
-                            if(shotType){
-                                System.out.println("REAL SHELL!");
-                                if (Player2NoMove){
-                                    playWho = 1;
+                                if (!success) {
+                                    System.out.println("You don't have that prop or wrong input.");
                                 }
-                                else playWho = 2;
-                                if (Objects.equals(shotWho, "You")){
-                                    Player1Health--;
-                                }
-                                else if (Objects.equals(shotWho, "Opposite")){
-                                    Player2Health--;
-                                }
-                                Player2NoMove = false;
-                            }
-                            else {
-                                System.out.println("NO SHELL!");
-                                Player2NoMove = false;
                             }
                         }
-                        else if (playWho == 2){
-                            while (!useProp.equals("no")){
-                                activePlayer = Player2Name;
-                                System.out.print("\033[H\033[2J");
-                                System.out.flush();
-                                buckshot.PrintHealth(Player1Health,Player2Health,Player1Name,Player2Name);
-                                buckshot.printProp(Player1Prop , Player1Name);
-                                buckshot.printProp(Player2Prop , Player2Name);
-                                System.out.println("It's " + activePlayer + "'s turn !");
-                                System.out.println("If you would not to use prop, you can just input \" no\"");
-                                System.out.println("Usage: cigarette/knife/drug/handcuff/magnify/adrenaline/phone/reverser/no");
-                                System.out.print( activePlayer + " , which prop would you like to use ? >: ");
-                                useProp = input.nextLine();
-                                switch (useProp){
-                                    case "cigarette":
-                                        if(Player2Health != 6) {
-                                            Player2Health++;
-                                        }
-                                    case "knife":
-                                        knifeMore = true;
-                                    case "drug":
-                                        boolean a = buckshot.drugEffect();
-                                        if(a){
-                                            Player2Health += 2;
-                                        }else{
-                                            Player2Health--;
-                                        }
-                                    case "handcuff":
-                                        Player1NoMove = true;
-                                    case "magnify":
-                                        buckshot.magnifyingGlass(shellType[j]);
-                                    case "adrenaline":
-                                        buckshot.adrenaline(Player1Prop,Player2Prop,Player2Name,Player1Name);
-                                    case "phone":
-                                        buckshot.SpecialPhone(shellType);
-                                    case "reverser":
-                                        buckshot.reverser(shellType , j);
-                                }
+
+                        // --- 射击阶段 ---
+                        System.out.println("\nSHOT TIME! " + activePlayer + "'s turn!");
+                        System.out.println("Shoot 'You' or 'Opposite'?");
+                        String shotWho = input.nextLine().trim();
+
+                        boolean shotType = buckshot.shot(shellType[j]);
+                        if (shotType) {
+                            System.out.println("REAL SHELL HIT!");
+
+                            if (shotWho.equalsIgnoreCase("You")) {
+                                if (!knifeMore) activeHealth--;
+                                else activeHealth -= 2;
+                            } else if (shotWho.equalsIgnoreCase("Opposite")) {
+                                if (!knifeMore) enemyHealth--;
+                                else enemyHealth -= 2;
+                            } else {
+                                System.out.println("Invalid target. Missed shot!");
                             }
-                            System.out.println("SHOT TIME. It's " + activePlayer + "'s turn !");
-                            System.out.println("You are going to shot who? (You/Opposite)");
-                            shotWho = input.nextLine();
-                            shotType=buckshot.shot(shellType[j]);
-                            if(shotType){
-                                System.out.println("REAL SHELL!");
-                                if (!Player1NoMove){
-                                    playWho = 1;
-                                }
-                                if (Objects.equals(shotWho, "You")){
-                                    if (!knifeMore){
-                                        Player1Health--;
-                                    }
-                                    else Player1Health -= 2;
-                                }
-                                else if (Objects.equals(shotWho, "Opposite")){
-                                    if (!knifeMore){
-                                        Player2Health--;
-                                    }
-                                    else Player2Health -= 2;
-                                }
-                            }
-                            else {
-                                System.out.println("NO SHELL!");
-                            }
-                            Player2NoMove = false;
+                        } else {
+                            System.out.println("NO SHELL (blank fire)!");
                         }
-                        if (Player1Health == 0 || Player2Health == 0){
-                            break;
+
+                        // 更新血量回写
+                        if (playWho == 1) {
+                            Player1Health = activeHealth;
+                            Player2Health = enemyHealth;
+                        } else {
+                            Player2Health = activeHealth;
+                            Player1Health = enemyHealth;
                         }
+
+                        // 回合切换规则
+                        if (shotType) {
+                            if (!enemyNoMove) {
+                                playWho = 3 - playWho; // 切换玩家
+                            }
+                        } else {
+                            playWho = 3 - playWho; // 没开枪也切换
+                        }
+
+                        Player1NoMove = false;
+                        Player2NoMove = false;
+
+                        if (Player1Health <= 0 || Player2Health <= 0) break;
                     }
-                    if (Player1Health == 0 || Player2Health == 0){
-                        break;
-                    }
+
+                    // 每轮后增加新的道具
                     buckshot.addProp(Player1Prop);
                     buckshot.addProp(Player2Prop);
                 }
-                if (Player1Health == 0) Player2Win = true;
-                else if (Player2Health == 0) Player1Win = true;
+
+                if (Player1Health <= 0) {
+                    Player2Win = true;
+                    break;
+                } else if (Player2Health <= 0) {
+                    Player1Win = true;
+                    break;
+                }
             }
-            if (Player1Win){
-                System.out.println(Player1Name + " has won!");
+
+            // --- 最终胜负判断 ---
+            if (Player1Win) {
+                System.out.println("\n" + Player1Name + " has won the match!");
+            } else if (Player2Win) {
+                System.out.println("\n" + Player2Name + " has won the match!");
             }
-            else if (Player2Win){
-                System.out.println(Player2Name + " has won!");
-            }
-            exit = buckshot.exit();
+
+            exit = !buckshot.exit(); // 继续游戏？
         }
     }
 }
+
+
+
+
 class buckshot {
+    private static final String[] props = {
+            "cigarette", "knife", "drug", "handcuff", "magnify", "adrenaline", "phone", "reverser"
+    };
+
+    // --- 随机生成子弹阵列 --- //
     public static boolean[] shell() {
-        int n = enhancedRandom.getRandomExcept(0, 9, 0, 1, 9);
-        boolean[] shellType = new boolean[n];
-        for (int i = 0; i < n; i++) {
-            shellType[i] = galtonBoard.BooleanRandom();
+        boolean[] shellArray = new boolean[6];
+        for (int i = 0; i < 6; i++) {
+            // 25%几率是真弹
+            shellArray[i] = (enhancedRandom.getRandom(0, 3) == 0);
         }
-        return shellType;
-    }
-    public static int[] createProp (){
-        int[] prop = new int[9];
-        for (int i = 0; i < 8; i++) {
-            prop[i] = 0;
-        }
-        for (int i = 0; i < 4; i++) {
-            prop[i]=enhancedRandom.getRandomExcept(0,9,0);
-        }
-        return prop;
-    }
-    public static void addProp(int[] prop) {
-        for (int i = 0; i < prop.length; i++) {
-            if (prop[i] == 0) {
-                prop[i] = enhancedRandom.getRandomExcept(0, 8, 0);
-            }
-        }
-    }
-    public static void printProp(int[] prop, String playerName) {
-        int[] propStatic = propStatic(prop);
-        for (int i = 1; i < propStatic.length; i++) {
-            switch (propStatic[i]) {
-                case 1:
-                    System.out.println("Player " + playerName + " has " + propStatic[i] + " cigarette(s).");
-                case 2:
-                    System.out.println("Player " + playerName + " has " + propStatic[i] + " knife(ves).");
-                case 3:
-                    System.out.println("Player " + playerName + " has " + propStatic[i] + " drug(s).");
-                case 4:
-                    System.out.println("Player " + playerName + " has " + propStatic[i] + " handcuff(s)");
-                case 5:
-                    System.out.println("Player " + playerName + " has " + propStatic[i] + " magnifying glass(es)");
-                case 6:
-                    System.out.println("Player " + playerName + " has " + propStatic[i] + " adrenaline");
-                case 7:
-                    System.out.println("Player " + playerName + " has " + propStatic[i] + " special phone");
-                case 8:
-                    System.out.println("Player " + playerName + " has " + propStatic[i] + " reverser");
-            }
-        }
-    }
-    public static boolean drugEffect(){
-        return galtonBoard.BooleanRandom();
-        /*
-            ture：代表起效
-            false：代表副作用
-         */
-    }
-    public static void magnifyingGlass(boolean shell){
-        if(shell){
-            System.out.println(" REAL SHELL");
-        }
-        else {
-            System.out.println(" NOT REAL SHELL");
-        }
-    }
-    public static void SpecialPhone(boolean[] shell){
-        int i = enhancedRandom.getRandomExcept(0, shell.length, 0,9);
-        if (shell[i]){
-            System.out.println("Shell " + i + " is a real shell.");
-        }
-        else System.out.println("Shell " + i + " is not a real shell.");
-    }
-    public static void reverser(boolean[] shell, int i){
-        shell[i] = !shell[i];
-    }
-    public static void PrintHealth(int Player1Health, int Player2Health, String Player1Name, String Player2Name){
-        System.out.println("Player1 Named: "+ Player1Name + "have health " + Player1Health);
-        System.out.println("Player2 Named: "+ Player2Name + "have health " + Player2Health);
+        return shellArray;
     }
 
-    public static boolean exit (){
-        Scanner input = new Scanner(System.in);
-        System.out.print("Play Again? (Y/N): ");
-        while (true) {
-            String exit= input.nextLine();
-            if(exit.equals("Y")||exit.equals("y")){
-                return true;
-            }
-            else if(exit.equals("N")||exit.equals("n")){
-                return false;
-            }
-            else {
-                System.out.print("Your input is incorrect, please try again: ");
-            }
+    // --- 初始化玩家道具栏，每种0个 --- //
+    public static int[] createProp() {
+        return new int[8];
+    }
+
+    // --- 玩家使用道具逻辑 --- //
+    public static boolean useProp(String propName, int[] activeProp, int[] enemyProp, boolean[] shell, int round) {
+        int index = propIndex(propName);
+        if (index == -1 || activeProp[index] <= 0) {
+            return false; // 无此道具或数量不足
         }
-    }
-    public static boolean shot (boolean shellType){
-        return shellType;
-    }
-    public static void adrenaline(int[] NegativePlayerProp, int[] PositivePlayerProp, String PositivePlayerName, String NegativePlayerName){
-        Scanner input = new Scanner(System.in);
-        System.out.println("You are gonna to take which? ");
-        System.out.println("Usage: cigarette/knife/drug/handcuff/magnify/adrenaline/phone/reverser");
-        String putin = input.nextLine();
-        boolean putSuccess = false;
-        int put = 0;
-        int[] propStatic = propStatic(NegativePlayerProp);
-        switch (putin) {
+
+        switch (propName) {
             case "cigarette":
-                if (propStatic[1] != 0){
-                    put = 1;
-                }else {
-                    System.out.println("Player " + NegativePlayerName + "doesn't have cigarette!");
+                // 香烟：偷看未来两颗子弹
+                System.out.println("[Cigarette] Preview:");
+                for (int i = round; i < Math.min(round + 2, shell.length); i++) {
+                    System.out.println("Position " + (i + 1) + ": " + (shell[i] ? "REAL SHELL" : "BLANK"));
                 }
+                break;
+
             case "knife":
-                if (propStatic[2] != 0){
-                    put = 2;
-                }else {
-                    System.out.println("Player " + NegativePlayerName + "doesn't have knife!");
-                }
+                // 刀：普通攻击翻倍（已在main处理）
+                System.out.println("[Knife] Will deal double damage this turn.");
+                break;
+
             case "drug":
-                if (propStatic[3] != 0){
-                    put = 3;
-                }else {
-                    System.out.println("Player " + NegativePlayerName + "doesn't have drug!");
-                }
+                // 药剂：回一滴血（但最大6）
+                System.out.println("[Drug] Healing...");
+                if (activeProp == null) break; // 防止意外空指针
+                activeProp[7]++; // 临时写入标记，等主程序处理回血（7号位为特殊标记）
+                break;
+
             case "handcuff":
-                if (propStatic[4] != 0){
-                    put = 4;
-                }else {
-                    System.out.println("Player " + NegativePlayerName + "doesn't have handcuff!");
-                }
+                // 手铐：敌人下回合无法开火
+                System.out.println("[Handcuff] Enemy will be unable to move next turn.");
+                enemyProp[6]++; // 敌人被冻结1次（6号位为冻结标记）
+                break;
+
             case "magnify":
-                if (propStatic[5] != 0){
-                    put = 5;
-                }else {
-                    System.out.println("Player " + NegativePlayerName + "doesn't have magnify!");
-                }
+                // 放大镜：下颗子弹提前暴露
+                System.out.println("[Magnify] Next bullet is exposed.");
+                System.out.println("Next bullet: " + (shell[round] ? "REAL SHELL" : "BLANK"));
+                break;
+
             case "adrenaline":
-                if (propStatic[6] != 0){
-                    put = 6;
-                }else {
-                    System.out.println("Player " + NegativePlayerName + "doesn't have adrenaline!");
-                }
+                // 肾上腺素：下回合不受任何冻结影响
+                System.out.println("[Adrenaline] You are immune to freeze next round.");
+                activeProp[6]--; // 移除自己被冻结
+                break;
+
             case "phone":
-                if (propStatic[7] != 0){
-                    put = 7;
-                }else {
-                    System.out.println("Player " + NegativePlayerName + "doesn't have special phone!");
-                }
+                // 电话：随机增加一个道具
+                System.out.println("[Phone] Calling for backup...");
+                int reward = enhancedRandom.getRandom(0, props.length - 1);
+                activeProp[reward]++;
+                System.out.println("Received a new prop: " + props[reward]);
+                break;
+
             case "reverser":
-                if (propStatic[8] != 0){
-                    put = 8;
-                }else {
-                    System.out.println("Player " + NegativePlayerName + "doesn't have reverser!");
-                }
+                // 反转器：子弹顺序反转
+                System.out.println("[Reverser] Reversing bullets...");
+                reverse(shell);
+                break;
         }
-        for (int i = 0; i < PositivePlayerProp.length; i++) {
-            if (PositivePlayerProp[i] == 0) {
-                PositivePlayerProp[i] = put;
-                putSuccess = true;
-            }
-        }
-        if (!putSuccess){
-            System.out.println("Player " + PositivePlayerName + " has no free space to put.");
-        }
+
+        activeProp[index]--; // 使用道具扣除
+        return true;
     }
-    public static int[] propStatic(int[] prop){
-        int[] propStatic = new int[prop.length];
-        for (int j : prop) {
-            switch (j) {
-                case 0:
-                    continue;
-                case 1:
-                    propStatic[1]++;
-                case 2:
-                    propStatic[2]++;
-                case 3:
-                    propStatic[3]++;
-                case 4:
-                    propStatic[4]++;
-                case 5:
-                    propStatic[5]++;
-                case 6:
-                    propStatic[6]++;
-                case 7:
-                    propStatic[7]++;
-                case 8:
-                    propStatic[8]++;
+
+    // --- 血量展示 --- //
+    public static void PrintHealth(int p1Health, int p2Health, String p1Name, String p2Name) {
+        System.out.println("\n【HEALTH STATUS】");
+        System.out.println(p1Name + ": " + p1Health + " HP");
+        System.out.println(p2Name + ": " + p2Health + " HP\n");
+    }
+
+    // --- 道具栏展示 --- //
+    public static void printProp(int[] prop, String playerName) {
+        System.out.println("【" + playerName + "'s Props】");
+        boolean hasProp = false;
+        for (int i = 0; i < props.length; i++) {
+            if (prop[i] > 0) {
+                System.out.println(props[i] + " x" + prop[i]);
+                hasProp = true;
             }
         }
-        return propStatic;
+        if (!hasProp) {
+            System.out.println("No props owned.");
+        }
+        System.out.println();
+    }
+
+
+    // --- 枪击结果 --- //
+    public static boolean shot(boolean bulletType) {
+        return bulletType;
+    }
+
+    // --- 每局结算时补充随机道具 --- //
+    public static void addProp(int[] prop) {
+        int newProp = enhancedRandom.getRandom(0, props.length - 1);
+        prop[newProp]++;
+    }
+
+    // --- 是否继续游戏 --- //
+    public static boolean exit() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("\nPlay again? (y/n)");
+        String answer = input.nextLine().trim().toLowerCase();
+        return answer.equals("y");
+    }
+
+    // --- 工具函数：根据名字找到道具序号 --- //
+    private static int propIndex(String propName) {
+        for (int i = 0; i < props.length; i++) {
+            if (props[i].equals(propName)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    // --- 工具函数：反转数组 --- //
+    private static void reverse(boolean[] array) {
+        for (int i = 0; i < array.length / 2; i++) {
+            boolean temp = array[i];
+            array[i] = array[array.length - i - 1];
+            array[array.length - i - 1] = temp;
+        }
     }
 }
-
-
-/*
-    道具：
-        1：回血烟
-        2：刀
-        3：药物
-        4：手铐
-        5：放大镜
-        6：肾上腺素
-        7：特殊手机
-        8：逆转器
- */

@@ -7,7 +7,9 @@ public class multiplyCalc {
         Scanner input = new Scanner(System.in);
         long a = input.nextInt();
         long b = input.nextInt();
+        input.close();
         long c = a * b;
         System.out.print(c);
+
     }
 }

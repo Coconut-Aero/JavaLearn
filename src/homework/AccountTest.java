@@ -13,6 +13,7 @@ public class AccountTest {
         System.out.print("Enter the balance: ");
         double balance = input.nextDouble();
         double limit = 0;
+        input.close();
         if (type == 1) {
             System.out.print("Enter the limit: ");
             limit = input.nextDouble();

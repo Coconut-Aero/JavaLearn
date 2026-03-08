@@ -12,11 +12,13 @@ public class averageCalc {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
+        sc.close();
         int sum = 0;
         for (int i = 0; i < n; i++) {
             sum += arr[i];
         }
         double average = (double) sum / n;
         System.out.println("The average is " + average);
+
     }
 }
